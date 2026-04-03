@@ -3,126 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Packaging Boxes | GloryStarPack | Wholesale Elite Solutions</title>
-    <meta name="description" content="Luxury custom cardboard boxes for high-end brands. Explore rigid gift boxes, reinforced mailers, and eco-friendly packaging with GloryStarPack's premium finish.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Custom Packaging Boxes | GloryStarPack | Mailers, Cartons, Luxury Gift Boxes</title>
+    <meta name="description" content="Premium custom boxes for every brand. From E-commerce mailers to luxury rigid gift boxes and custom paper bags. GloryStarPack defines quality with wholesale pricing and no MOQ.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --gold-hover: #F4CF67; --text-white: #FFFFFF; --dark-grey: #2D2D2E; --bg-light: #2A2A2B; --border: rgba(212, 175, 55, 0.2); --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
-        h1, h2, h3 { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        header { background-color: rgba(26, 26, 27, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav { height: 90px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--metallic-gold); letter-spacing: 2px; text-decoration: none; }
-        .logo span { color: var(--text-white); }
-        nav ul { display: flex; gap: 40px; list-style: none; }
-        nav ul a { font-size: 0.85rem; font-weight: 500; opacity: 0.8; text-decoration: none; color: white; }
-        nav ul a:hover { color: var(--metallic-gold); opacity: 1; }
-        .btn { display: inline-block; padding: 14px 32px; font-weight: 700; border-radius: 2px; cursor: pointer; font-size: 0.85rem; transition: var(--transition); border: none; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; }
-        .btn-primary { background-color: var(--metallic-gold); color: var(--primary-black); }
-        .btn-primary:hover { background-color: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
-        .page-header { padding: 180px 0 100px; background: linear-gradient(to bottom, #1A1A1B, #2A2A2B); text-align: center; }
-        .page-header h1 { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 25px; }
-        .page-header p { font-size: 1.1rem; color: #888; max-width: 800px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 100px 0; }
-        .card { background: var(--dark-grey); padding: 50px; border: 1px solid #333; position: relative; }
-        .card h3 { color: var(--metallic-gold); margin-bottom: 25px; font-size: 1.5rem; }
-        .card ul { list-style: none; margin-bottom: 30px; }
-        .card ul li { margin-bottom: 12px; color: #BBB; font-size: 0.9rem; }
-        .card ul li strong { color: var(--metallic-gold); }
-        .moq-tag { font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-white); border-top: 1px solid #444; padding-top: 20px; display: block; }
-        table { width: 100%; border-collapse: collapse; margin-top: 50px; }
-        th { background: var(--metallic-gold); color: var(--primary-black); padding: 15px; text-align: left; font-size: 0.8rem; letter-spacing: 1px; }
-        td { padding: 15px; border-bottom: 1px solid #333; color: #888; font-size: 0.9rem; }
-        footer { padding: 80px 0; background: #000; border-top: 1px solid var(--border); text-align: center; }
+        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --text-white: #FFFFFF; --dark-grey: #222222; --border-gold: rgba(212, 175, 55, 0.3); }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
+        header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); position: sticky; top: 0; background: rgba(26, 26, 27, 0.98); z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--metallic-gold); }
+        .hero-sub { padding: 120px 10% 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png'); background-size: cover; background-position: center; }
+        .hero-sub h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
+        .section { padding: 80px 10%; }
+        .section-dark { background-color: #111; }
+        .section-title { text-align: center; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; }
+        
+        /* Product Matrix */
+        .box-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .box-card { background: #222; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
+        .box-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
+        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
+        .card-content { padding: 40px; }
+        .box-card h3 { color: var(--metallic-gold); font-size: 1.6rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.85rem; }
+        .spec-table td { padding: 12px 0; border-bottom: 1px solid #333; }
+        .spec-table td:first-child { color: var(--metallic-gold); font-weight: 700; width: 45%; }
+        
+        /* Process Flow */
+        .process-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
+        .step { background: #1a1a1a; padding: 30px; border: 1px solid #333; }
+        .step-num { color: var(--metallic-gold); font-size: 2rem; font-weight: 700; display: block; margin-bottom: 10px; }
+
+        /* Scenarios */
+        .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .scenario-item { background: #222; padding: 30px; border-left: 4px solid var(--metallic-gold); }
+        .scenario-item h4 { color: var(--metallic-gold); margin-top: 0; }
+
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
+        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
+        .cta-button:hover { transform: scale(1.05); background-color: #f1c40f; }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="custom-boxes.html">Custom Boxes</a></li>
-                    <li><a href="box-labels.html">Box Labels</a></li>
-                </ul>
-                <a href="index.html#quote" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Get A Quote</a>
-            </nav>
-        </div>
+        <a href="index.html" class="logo">GLORYSTARPACK</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="custom-boxes.html" style="color: var(--metallic-gold);">Custom Boxes</a>
+            <a href="box-labels.html">Box Labels</a>
+            <a href="index.html#quote">Get A Quote</a>
+        </nav>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Elite Custom Box Manufacturing</h1>
-            <p>From reinforced logistics mailers to bespoke luxury gift boxes. We manufacture the physical touchpoints that define your brand excellence.</p>
+    <section class="hero-sub">
+        <h1>Bespoke Box Solutions</h1>
+        <p>Premium Structural Engineering Meets High-End Custom Branding.</p>
+    </section>
+
+    <!-- 4 Step Process -->
+    <section class="section section-dark">
+        <h2 class="section-title">The Box Customization Journey</h2>
+        <div class="process-flow">
+            <div class="step"><span class="step-num">01</span><h4>Specification</h4><p>Choose your dimensions, box type, and structural weight.</p></div>
+            <div class="step"><span class="step-num">02</span><h4>3D Rendering</h4><p>Review a high-fidelity 3D mockup of your design.</p></div>
+            <div class="step"><span class="step-num">03</span><h4>Prototyping</h4><p>Confirm the final digital proof before production.</p></div>
+            <div class="step"><span class="step-num">04</span><h4>Global Dispatch</h4><p>Receive your wholesale order in 14 business days.</p></div>
         </div>
     </section>
 
-    <section class="container">
-        <div class="grid">
-            <div class="card">
-                <h3>Elite E-Commerce Mailers</h3>
-                <p style="margin-bottom: 20px; color: #888;">The benchmark for subscription brands and luxury e-retail. Durable, refined, and fully customizable.</p>
-                <ul>
-                    <li><strong>MATERIAL:</strong> Reinforced Corrugated E-Flute</li>
-                    <li><strong>FINISH:</strong> Soft-Touch Matte / Spot UV</li>
-                    <li><strong>STRENGTH:</strong> High-Impact Protection</li>
-                </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | STARTING AT $0.45/UNIT</span>
+    <!-- Custom Box Categories -->
+    <section class="section">
+        <h2 class="section-title">Our Production Categories</h2>
+        <div class="box-grid">
+            <!-- Mailer Box (飞机盒) -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Aed0b78bad1344296b0473b9c7a3863019.png');"></div>
+                <div class="card-content">
+                    <h3>Custom Mailer Boxes (飞机盒)</h3>
+                    <p>The premium choice for E-commerce and subscription brands. Lightweight yet high-strength.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>E-Flute / B-Flute Corrugated</td></tr>
+                        <tr><td>Weight Capacity</td><td>Up to 5kg Support</td></tr>
+                        <tr><td>Printing</td><td>Full Internal & External</td></tr>
+                        <tr><td>MOQ</td><td>1 Unit (No Barriers)</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="card">
-                <h3>Luxury Rigid Gift Boxes</h3>
-                <p style="margin-bottom: 20px; color: #888;">For premium jewelry, tech, and elite apparel. A physical weight of quality that customers feel.</p>
-                <ul>
-                    <li><strong>MATERIAL:</strong> 1200GSM Premium Chipboard</li>
-                    <li><strong>FINISH:</strong> Metallic Foil / Debossing</li>
-                    <li><strong>TYPE:</strong> Lid & Base / Magnetic Closure</li>
-                </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | BESPOKE LUXURY PRICING</span>
+
+            <!-- Shipping Carton (纸箱) -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Aea40df5463fc4baca788fb6de41dc748H.png');"></div>
+                <div class="card-content">
+                    <h3>Shipping & Logistics Cartons (纸箱)</h3>
+                    <p>Heavy-duty industrial cartons for bulk shipping and safe international logistics.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>Single / Double Wall Reinforced</td></tr>
+                        <tr><td>Test Weight</td><td>200lb - 275lb Burst Test</td></tr>
+                        <tr><td>Usage</td><td>Logistics / Warehousing</td></tr>
+                        <tr><td>MOQ</td><td>Bulk Wholesale Tiers</td></tr>
+                    </table>
+                </div>
             </div>
-            <div class="card">
-                <h3>Eco-Industrial Kraft</h3>
-                <p style="margin-bottom: 20px; color: #888;">Sustainable solutions for organic brands and high-volume industrial components.</p>
-                <ul>
-                    <li><strong>MATERIAL:</strong> 100% Recycled Kraft Board</li>
-                    <li><strong>FINISH:</strong> Soy-Based Inks / Natural Feel</li>
-                    <li><strong>STRENGTH:</strong> Heavy-Duty Load Capacity</li>
-                </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | ECO-BULK DISCOUNTS</span>
+
+            <!-- Luxury Gift Box (礼品包装盒) -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png');"></div>
+                <div class="card-content">
+                    <h3>Luxury Rigid Gift Boxes (礼品盒)</h3>
+                    <p>Magnetic closures and premium greyboard for jewelry, tech, and boutique gifts.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>1200gsm - 2000gsm Greyboard</td></tr>
+                        <tr><td>Finishing</td><td>Foil Stamping / Soft Touch</td></tr>
+                        <tr><td>Inserts</td><td>EVA / Satin / Die-cut Card</td></tr>
+                        <tr><td>MOQ</td><td>Luxury Tier Available</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Gift Bag (礼品包装袋) -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acc7d37b590824df58d1297017e4f82a9N.png');"></div>
+                <div class="card-content">
+                    <h3>Premium Branded Gift Bags (礼品袋)</h3>
+                    <p>Custom paper bags with ribbon handles and high-end printing for retail boutiques.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>250gsm - 350gsm Art Paper</td></tr>
+                        <tr><td>Handle Type</td><td>Ribbon / Cotton / Twisted</td></tr>
+                        <tr><td>Finishing</td><td>Matte / Gloss Lamination</td></tr>
+                        <tr><td>MOQ</td><td>Retail Scalable Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages & Scenarios -->
+    <section class="section section-dark">
+        <h2 class="section-title">The GloryStar Advantage</h2>
+        <div class="scenario-grid">
+            <div class="scenario-item">
+                <h4>Direct-to-Factory</h4>
+                <p>Save up to 45% by cutting out intermediaries. We own the production lines.</p>
+            </div>
+            <div class="scenario-item">
+                <h4>Free 3D Engineering</h4>
+                <p>Our structural engineers ensure your box is secure and aesthetically perfect.</p>
+            </div>
+            <div class="scenario-item">
+                <h4>Eco-Luxury Choice</h4>
+                <p>100% FSC-certified materials and non-toxic soy-based inks for all custom orders.</p>
             </div>
         </div>
 
-        <h2 style="text-align: center; color: var(--metallic-gold); margin-top: 50px;">Technical Material Lab</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MATERIAL GRADE</th>
-                    <th>BEST APPLICATION</th>
-                    <th>FINISHING OPTIONS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>350gsm Art Paper</td><td>Small Retail Products</td><td>Gloss/Matte Lamination</td></tr>
-                <tr><td>Elite Corrugated (E/B)</td><td>Subscription / Shipping</td><td>Direct Print / Litho-Laminate</td></tr>
-                <tr><td>Premium Rigid Board</td><td>Jewelry / Electronics</td><td>Gold Foil / Spot UV / Velvet</td></tr>
-            </tbody>
-        </table>
-        <div style="text-align: center; margin-top: 80px; padding-bottom: 120px;">
-            <a href="index.html#quote" class="btn btn-primary">Request Manufacturing Quote</a>
+        <h3 style="color: var(--metallic-gold); text-align: center; margin-top: 80px; text-transform: uppercase;">Application Scenarios</h3>
+        <div class="scenario-grid" style="margin-top: 40px;">
+            <div class="scenario-item">
+                <h4>E-commerce Drops</h4>
+                <p>Viral unboxing experiences with branded mailers and inside-print customization.</p>
+            </div>
+            <div class="scenario-item">
+                <h4>Retail Presence</h4>
+                <p>Consistent branding from high-end rigid gift boxes to premium boutique bags.</p>
+            </div>
+            <div class="scenario-item">
+                <h4>Corporate Gifting</h4>
+                <p>Professional presentation for tech launches, employee kits, and executive gifts.</p>
+            </div>
         </div>
+    </section>
+
+    <section style="padding: 100px 10%; text-align: center; background: #000;">
+        <h2 style="color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase;">Ready to Start Your Order?</h2>
+        <p style="color: #888; margin-bottom: 50px;">Consult with our B2B experts for a tailored wholesale quote within 24 hours.</p>
+        <a href="https://wa.me/8618020755949" class="cta-button">Chat with B2B Specialist</a>
     </section>
 
     <footer>
-        <div class="container">
-            <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
-            <p style="color: #444; margin-top: 30px;">© 2026 GloryStarPack. Crafted for Glory. Delivered Worldwide.</p>
-        </div>
+        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Email: kevin@GloryStarPack.com | WhatsApp: +86 18020755949</p>
     </footer>
-
 </body>
 </html>

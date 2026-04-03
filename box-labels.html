@@ -3,133 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>High-End Branded Labels | GloryStarPack | Wholesale & Custom Shapes</title>
-    <meta name="description" content="Premium custom labels for packaging. From gold foil and metallic finishes to industrial waterproof stickers. Bespoke labels by GloryStarPack. No MOQ.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Custom Branded Labels | GloryStarPack | Wholesale, Waterproof, Luxury Accents</title>
+    <meta name="description" content="High-end custom labels for your packaging. Explore metallic foil, embossed, and waterproof custom labels with GloryStarPack's luxury finishing and wholesale rates.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --gold-hover: #F4CF67; --text-white: #FFFFFF; --dark-grey: #2D2D2E; --bg-light: #2A2A2B; --border: rgba(212, 175, 55, 0.2); --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
-        h1, h2, h3 { font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-        header { background-color: rgba(26, 26, 27, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); position: fixed; width: 100%; top: 0; z-index: 1000; }
-        nav { height: 90px; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--metallic-gold); letter-spacing: 2px; text-decoration: none; }
-        .logo span { color: var(--text-white); }
-        nav ul { display: flex; gap: 40px; list-style: none; }
-        nav ul a { font-size: 0.85rem; font-weight: 500; opacity: 0.8; text-decoration: none; color: white; }
-        nav ul a:hover { color: var(--metallic-gold); opacity: 1; }
-        .btn { display: inline-block; padding: 14px 32px; font-weight: 700; border-radius: 2px; cursor: pointer; font-size: 0.85rem; transition: var(--transition); border: none; text-transform: uppercase; letter-spacing: 1.5px; text-decoration: none; }
-        .btn-primary { background-color: var(--metallic-gold); color: var(--primary-black); }
-        .btn-primary:hover { background-color: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
-        .page-header { padding: 180px 0 100px; background: linear-gradient(to bottom, #1A1A1B, #2A2A2B); text-align: center; }
-        .page-header h1 { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 25px; }
-        .page-header p { font-size: 1.1rem; color: #888; max-width: 800px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; padding: 100px 0; }
-        .card { background: var(--dark-grey); padding: 50px; border: 1px solid #333; }
-        .card h3 { color: var(--metallic-gold); margin-bottom: 25px; font-size: 1.5rem; }
-        .card ul { list-style: none; margin-bottom: 30px; }
-        .card ul li { margin-bottom: 12px; color: #BBB; font-size: 0.9rem; }
-        .card ul li strong { color: var(--metallic-gold); }
-        .moq-tag { font-weight: 800; font-size: 0.8rem; letter-spacing: 1px; color: var(--text-white); border-top: 1px solid #444; padding-top: 20px; display: block; }
-        .showcase { padding: 100px 0; background: #000; text-align: center; border-top: 1px solid var(--border); }
-        footer { padding: 80px 0; background: #000; border-top: 1px solid var(--border); text-align: center; }
+        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --text-white: #FFFFFF; --dark-grey: #222222; --border-gold: rgba(212, 175, 55, 0.3); }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
+        header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); position: sticky; top: 0; background: rgba(26, 26, 27, 0.98); z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 700; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        nav a:hover { color: var(--metallic-gold); }
+        .hero-sub { padding: 120px 10% 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png'); background-size: cover; background-position: center; }
+        .hero-sub h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
+        .section { padding: 80px 10%; }
+        .section-dark { background-color: #111; }
+        .section-title { text-align: center; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; }
+        
+        /* Label Matrix */
+        .label-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .label-card { background: #222; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
+        .label-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
+        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
+        .card-content { padding: 40px; }
+        .label-card h3 { color: var(--metallic-gold); font-size: 1.6rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.85rem; }
+        .spec-table td { padding: 12px 0; border-bottom: 1px solid #333; }
+        .spec-table td:first-child { color: var(--metallic-gold); font-weight: 700; width: 45%; }
+        
+        /* Finishing Gallery */
+        .finishing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 40px; }
+        .finish-item { background: #111; padding: 25px; border: 1px solid #444; text-align: center; font-size: 0.8rem; }
+        .finish-item h5 { color: var(--metallic-gold); margin-top: 0; margin-bottom: 10px; text-transform: uppercase; }
+
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
+        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
+        .cta-button:hover { transform: scale(1.05); background-color: #f1c40f; }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="custom-boxes.html">Custom Boxes</a></li>
-                    <li><a href="box-labels.html">Box Labels</a></li>
-                </ul>
-                <a href="index.html#quote" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">Get A Quote</a>
-            </nav>
-        </div>
+        <a href="index.html" class="logo">GLORYSTARPACK</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="custom-boxes.html">Custom Boxes</a>
+            <a href="box-labels.html" style="color: var(--metallic-gold);">Box Labels</a>
+            <a href="index.html#quote">Get A Quote</a>
+        </nav>
     </header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Premium Branded Labels</h1>
-            <p>The final touch of perfection. From metallic gold foil accents to industrial-grade waterproof stickers, we define your brand's unboxing signature.</p>
+    <section class="hero-sub">
+        <h1>High-End Custom Labels</h1>
+        <p>Premium branding solutions designed to make your boxes unforgettable.</p>
+    </section>
+
+    <!-- Custom Label Categories -->
+    <section class="section">
+        <h2 class="section-title">Our Labeling Portfolio</h2>
+        <div class="label-grid">
+            <!-- Metallic Foil (金箔) -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png');"></div>
+                <div class="card-content">
+                    <h3>Metallic & Foil Accents</h3>
+                    <p>Hot-stamped gold, silver, and copper foil for high-end boutique and tech packaging.</p>
+                    <table class="spec-table">
+                        <tr><td>Base Material</td><td>BOPP / Metallic PET</td></tr>
+                        <tr><td>Finishing</td><td>Gold / Silver / Rose Foil</td></tr>
+                        <tr><td>Application</td><td>Luxury Boxes / Electronics</td></tr>
+                        <tr><td>MOQ</td><td>Premium Tier Available</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Industrial Waterproof (工业防水) -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Af289e7b451b843bda8ce3635a145e2c8f.png');"></div>
+                <div class="card-content">
+                    <h3>Waterproof Industrial Seals</h3>
+                    <p>Heavy-duty adhesives and matte lamination for shipping cartons and outdoor warehousing.</p>
+                    <table class="spec-table">
+                        <tr><td>Base Material</td><td>Vinyl / Synthetic Poly</td></tr>
+                        <tr><td>Surface Finish</td><td>UV Laminated / Matte / Satin</td></tr>
+                        <tr><td>Durability</td><td>Moisture & Heat Resistant</td></tr>
+                        <tr><td>Adhesive</td><td>Extra High-Tack Permanent</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Artisan Textured (纹理纸) -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Abedf34c9e97a4729abbea20726c18537P.png');"></div>
+                <div class="card-content">
+                    <h3>Artisan Textured Papers</h3>
+                    <p>Premium tactile papers with linen or felt finish for wine, food, and high-end gifts.</p>
+                    <table class="spec-table">
+                        <tr><td>Base Material</td><td>FSC Textured Paper / Felt</td></tr>
+                        <tr><td>Technique</td><td>Multi-level Emboss / Deboss</td></tr>
+                        <tr><td>Aesthetic</td><td>Handcrafted / Luxury Artisan</td></tr>
+                        <tr><td>MOQ</td><td>Low Minimums (No barriers)</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Security Seals (防伪封条) -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A266beb9c5df340af9b101580477d2435x.png');"></div>
+                <div class="card-content">
+                    <h3>Tamper-Evident Security Seals</h3>
+                    <p>Bespoke security labels to protect high-value B2B shipments and retail products.</p>
+                    <table class="spec-table">
+                        <tr><td>Base Material</td><td>Fragmenting Film / Void Film</td></tr>
+                        <tr><td>Visual</td><td>Holographic / Custom Print</td></tr>
+                        <tr><td>Usage</td><td>Logistics / Electronics / Luxury</td></tr>
+                        <tr><td>MOQ</td><td>Scalable B2B Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="container">
-        <div class="grid">
-            <div class="card">
-                <h3>Metallic Foil Labels</h3>
-                <p style="margin-bottom: 20px; color: #888;">Hot-stamped foil accents in Gold, Silver, and Rose Gold. Designed for the global elite.</p>
-                <ul>
-                    <li><strong>ACCENTS:</strong> Real Metallic Hot Stamping</li>
-                    <li><strong>MATERIAL:</strong> Clear / White Premium Vinyl</li>
-                    <li><strong>LOOK:</strong> Luxury High-Reflection</li>
+    <!-- Label Finishes & Adhesive -->
+    <section class="section section-dark">
+        <h2 class="section-title">Surface Finishing Gallery</h2>
+        <div class="finishing-grid">
+            <div class="finish-item"><h5>Matte/Gloss</h5><p>Anti-Reflective / High-Shine</p></div>
+            <div class="finish-item"><h5>Spot UV</h5><p>Tactile Gloss Accents</p></div>
+            <div class="finish-item"><h5>Hot Foil</h5><p>Gold/Silver Stamping</p></div>
+            <div class="finish-item"><h5>Embossing</h5><p>Raised Text & Patterns</p></div>
+            <div class="finish-item"><h5>Soft Touch</h5><p>Velvet-like Surface</p></div>
+            <div class="finish-item"><h5>Die-Cutting</h5><p>Bespoke Shape Options</p></div>
+            <div class="finish-item"><h5>Inside Print</h5><p>Double-Sided Branding</p></div>
+            <div class="finish-item"><h5>Anti-Scratch</h5><p>Durable Shield Coating</p></div>
+        </div>
+
+        <h3 style="color: var(--metallic-gold); text-align: center; margin-top: 80px; text-transform: uppercase;">Adhesive Solutions</h3>
+        <div class="label-grid" style="margin-top: 40px; grid-template-columns: repeat(3, 1fr);">
+            <div class="finish-item"><h5>Permanent High-Tack</h5><p>For corrugated cartons and raw surfaces.</p></div>
+            <div class="finish-item"><h5>Removable Adhesive</h5><p>Clean removal for seasonal promotions.</p></div>
+            <div class="finish-item"><h5>Void-Visible Adhesive</h5><p>Instant tamper evidence for security.</p></div>
+        </div>
+    </section>
+
+    <!-- Why Custom Labels -->
+    <section class="section">
+        <div style="display: flex; gap: 50px; align-items: center;">
+            <div style="flex: 1;">
+                <h2 style="color: var(--metallic-gold); text-transform: uppercase;">Why Custom Labels?</h2>
+                <p style="color: #bbb;">A label is more than a sticker—it's the final seal of quality for your brand. Custom labels define your product's category, convey trust, and professionalize your packaging.</p>
+                <ul style="color: #888; padding-left: 20px; margin-top: 30px;">
+                    <li>✓ Professionalize generic box shipping</li>
+                    <li>✓ High-impact unboxing experiences</li>
+                    <li>✓ Security & logistics tracking integration</li>
+                    <li>✓ High-volume cost savings at wholesale rates</li>
                 </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | ELITE BRANDING TIER</span>
             </div>
-            <div class="card">
-                <h3>Industrial Waterproof</h3>
-                <p style="margin-bottom: 20px; color: #888;">Heavy-duty labels that survive transit, moisture, and extreme temperatures with ease.</p>
-                <ul>
-                    <li><strong>COATING:</strong> UV-Resistant Matte / Gloss</li>
-                    <li><strong>ADHESIVE:</strong> Permanent Industrial Strength</li>
-                    <li><strong>DURABILITY:</strong> Scratch & Fade Resistant</li>
-                </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | WHOLESALE LOGISTICS BULK</span>
-            </div>
-            <div class="card">
-                <h3>Embossed Custom Texture</h3>
-                <p style="margin-bottom: 20px; color: #888;">Tactile depth that customers can feel. Perfect for high-end cosmetic and bottle labels.</p>
-                <ul>
-                    <li><strong>TECHNIQUE:</strong> Blind or Foil Embossing</li>
-                    <li><strong>TEXTURE:</strong> Raised 3D Surface</li>
-                    <li><strong>FINISH:</strong> Soft-Touch / Linen Paper</li>
-                </ul>
-                <span class="moq-tag">MOQ: 1 UNIT | BESPOKE TEXTURE TIER</span>
+            <div style="flex: 1;">
+                <img src="https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png" style="width: 100%; border: 1px solid var(--border-gold);" alt="Premium Branding Labels">
             </div>
         </div>
     </section>
 
-    <section class="showcase">
-        <div class="container">
-            <h2 style="color: var(--metallic-gold); margin-bottom: 40px;">Label Precision Laboratory</h2>
-            <p style="color: #666; max-width: 800px; margin: 0 auto 60px;">Every label is precision die-cut to your exact logo silhouette. We utilize state-of-the-art digital and offset printing to ensure color matching (Pantone) and extreme detail resolution.</p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <div style="padding: 20px; border: 1px solid #222; width: 200px;">
-                    <h4 style="color: var(--metallic-gold);">MATTE</h4>
-                    <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Natural & Refined</p>
-                </div>
-                <div style="padding: 20px; border: 1px solid #222; width: 200px;">
-                    <h4 style="color: var(--metallic-gold);">GLOSS</h4>
-                    <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Vibrant & Bold</p>
-                </div>
-                <div style="padding: 20px; border: 1px solid #222; width: 200px;">
-                    <h4 style="color: var(--metallic-gold);">METALLIC</h4>
-                    <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Elite Reflection</p>
-                </div>
-                <div style="padding: 20px; border: 1px solid #222; width: 200px;">
-                    <h4 style="color: var(--metallic-gold);">SPOT UV</h4>
-                    <p style="font-size: 0.7rem; color: #555; margin-top: 10px;">Tactile Contrast</p>
-                </div>
-            </div>
-            <div style="margin-top: 80px; padding-bottom: 120px;">
-                <a href="index.html#quote" class="btn btn-primary">Start Design Consultation</a>
-            </div>
-        </div>
+    <section style="padding: 100px 10%; text-align: center; background: #000;">
+        <h2 style="color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase;">Request Wholesale Label Quote</h2>
+        <p style="color: #888; margin-bottom: 50px;">Receive a tailored quote and structural design advice within 24 hours.</p>
+        <a href="https://wa.me/8618020755949" class="cta-button">Consult with Label Specialist</a>
     </section>
 
     <footer>
-        <div class="container">
-            <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
-            <p style="color: #444; margin-top: 30px;">© 2026 GloryStarPack. Crafted for Glory. Delivered Worldwide.</p>
-        </div>
+        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">Email: kevin@GloryStarPack.com | WhatsApp: +86 18020755949</p>
     </footer>
-
 </body>
 </html>

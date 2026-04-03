@@ -3,219 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GloryStarPack | Premium Custom Box & Label Wholesale | No MOQ</title>
-    <meta name="description" content="Elevate your brand with GloryStarPack. Premium custom cardboard boxes and branded labels at wholesale prices. Low MOQ, fast 7-14 day global delivery. Part of the GloryStar Group.">
+    <title>GloryStarPack | Premium Custom Box & Label Wholesale | Global B2B Leader</title>
+    <meta name="description" content="GloryStarPack: Luxury custom packaging solutions. High-end boxes, premium labels, 0 MOQ, factory-direct pricing. Member of the GloryStar Group.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-black: #1A1A1B;
-            --metallic-gold: #D4AF37;
+        :root { 
+            --primary-black: #1A1A1B; 
+            --metallic-gold: #D4AF37; 
             --gold-hover: #F4CF67;
-            --text-white: #FFFFFF;
-            --dark-grey: #2D2D2E;
-            --bg-light: #2A2A2B;
-            --border: rgba(212, 175, 55, 0.2);
+            --text-white: #FFFFFF; 
+            --dark-grey: #222222; 
+            --mid-grey: #2D2D2E;
+            --border-gold: rgba(212, 175, 55, 0.3); 
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary-black);
-            color: var(--text-white);
-            line-height: 1.6;
-            overflow-x: hidden;
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary-black); 
+            color: var(--text-white); 
+            line-height: 1.6; 
+            scroll-behavior: smooth; 
         }
-
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-white);
+        
+        /* Navigation */
+        header { 
+            padding: 15px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-gold); 
+            position: sticky; 
+            top: 0; 
+            background: rgba(26, 26, 27, 0.98); 
+            z-index: 1000; 
         }
-
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            font-weight: 700;
-            border-radius: 2px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .btn-primary { background-color: var(--metallic-gold); color: var(--primary-black); }
-        .btn-primary:hover { background-color: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
-        .btn-outline { background-color: transparent; border: 1px solid var(--metallic-gold); color: var(--metallic-gold); }
-        .btn-outline:hover { background-color: var(--metallic-gold); color: var(--primary-black); }
-
-        header {
-            background-color: rgba(26, 26, 27, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav { height: 90px; display: flex; justify-content: space-between; align-items: center; }
-
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--metallic-gold); letter-spacing: 2px; }
+        .logo { font-size: 24px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
         .logo span { color: var(--text-white); }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
+        nav a:hover { color: var(--metallic-gold); }
 
-        nav ul { display: flex; gap: 40px; list-style: none; }
-        nav ul a { font-size: 0.85rem; font-weight: 500; opacity: 0.8; }
-        nav ul a:hover { color: var(--metallic-gold); opacity: 1; }
-
-        .hero {
-            padding-top: 180px;
-            padding-bottom: 120px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
+        /* Hero */
+        .hero { 
+            height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png'); 
+            background-size: cover; 
+            background-position: center; 
+            padding: 0 10%; 
         }
+        .hero-content { max-width: 1000px; }
+        .hero h1 { font-size: 4.5rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; line-height: 1.1; font-weight: 800; }
+        .hero p { font-size: 1.4rem; margin: 0 auto 45px; color: #ddd; font-weight: 300; letter-spacing: 1px; }
 
-        .hero h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 25px; }
-        .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto 50px; color: #CCC; }
+        /* Floating WhatsApp Button */
+        .wa-float { 
+            position: fixed; 
+            bottom: 40px; 
+            right: 40px; 
+            background-color: #25d366; 
+            color: white; 
+            padding: 18px 30px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4); 
+            z-index: 9999; 
+            display: flex; 
+            align-items: center; 
+            transition: var(--transition); 
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        .wa-float:hover { transform: translateY(-5px) scale(1.05); background-color: #128c7e; box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3); }
 
+        /* Sections */
+        .section { padding: 120px 10%; }
+        .section-dark { background: #111; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.5rem; color: var(--metallic-gold); margin-bottom: 20px; }
-        .section-header p { color: #888; max-width: 700px; margin: 0 auto; }
+        .section-header h2 { color: var(--metallic-gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
+        .section-header p { color: #888; font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
 
-        .stats { padding: 100px 0; background: #000; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
-        .stat-item h3 { color: var(--metallic-gold); font-size: 3rem; margin-bottom: 10px; }
-        .stat-item p { font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; color: #888; }
+        /* Industry Grid */
+        .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .industry-card { background: var(--dark-grey); padding: 60px 40px; text-align: center; border: 1px solid #333; transition: var(--transition); border-radius: 2px; }
+        .industry-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); background: #282828; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .industry-card .icon { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 25px; display: block; }
+        .industry-card h3 { color: var(--metallic-gold); font-size: 1.3rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
+        .industry-card p { color: #999; font-size: 0.95rem; line-height: 1.7; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 100px 0; }
-        .card { background: var(--dark-grey); padding: 40px; border: 1px solid #333; transition: var(--transition); }
-        .card:hover { border-color: var(--metallic-gold); transform: translateY(-5px); }
-        .card h3 { color: var(--metallic-gold); margin-bottom: 20px; font-size: 1.25rem; }
-        .card p { color: #888; font-size: 0.95rem; margin-bottom: 30px; }
+        /* Advantage Table */
+        .advantage-container { overflow-x: auto; margin-top: 50px; }
+        .advantage-table { width: 100%; border-collapse: collapse; background: #000; border: 1px solid var(--border-gold); }
+        .advantage-table th, .advantage-table td { padding: 30px; border: 1px solid #333; text-align: left; }
+        .advantage-table th { color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; background: #080808; }
+        .advantage-table .highlight { color: var(--metallic-gold); font-weight: 800; background: rgba(212, 175, 55, 0.05); }
+        .advantage-table td { color: #BBB; font-size: 1rem; }
 
-        #quote { padding: 120px 0; background: #111; text-align: center; }
-        .contact-box { max-width: 800px; margin: 60px auto; background: var(--bg-light); border: 1px solid var(--border); padding: 50px; position: relative; }
-        .contact-box::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 1px solid var(--metallic-gold); z-index: -1; }
+        /* 6-Step Process */
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step { background: #1a1a1b; padding: 50px; border-left: 5px solid var(--metallic-gold); position: relative; overflow: hidden; transition: var(--transition); border-radius: 2px; }
+        .step:hover { background: #222; transform: translateX(10px); }
+        .step span { font-size: 4.5rem; color: rgba(212, 175, 55, 0.05); position: absolute; top: -10px; right: 10px; font-weight: 800; }
+        .step h4 { color: var(--metallic-gold); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1; }
+        .step p { font-size: 0.9rem; color: #888; line-height: 1.7; position: relative; z-index: 1; }
 
-        footer { padding: 100px 0 50px; background: #000; border-top: 1px solid var(--border); text-align: center; }
-        .footer-bottom { margin-top: 50px; padding-top: 40px; border-top: 1px solid #222; color: #555; font-size: 0.8rem; letter-spacing: 1px; }
+        /* Quote Section */
+        #quote { padding: 120px 10%; background: #000; text-align: center; border-top: 1px solid var(--border-gold); }
+        .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; text-align: left; align-items: start; max-width: 1400px; margin: 0 auto; }
+        .quote-info h2 { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .quote-info p { color: #AAA; margin-bottom: 50px; font-size: 1.1rem; }
+        
+        .contact-card { background: #1A1A1B; padding: 50px; border: 1px solid var(--border-gold); border-radius: 4px; }
+        .contact-item { margin-bottom: 35px; }
+        .contact-item:last-child { margin-bottom: 0; }
+        .contact-item h5 { color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+        .contact-item p { color: var(--metallic-gold); font-size: 1.4rem; font-weight: 700; }
 
-        @media (max-width: 1024px) { .hero h1 { font-size: 2.5rem; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 640px) { .stats-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+        .cta-button { 
+            background-color: var(--metallic-gold); 
+            color: var(--primary-black); 
+            padding: 22px 60px; 
+            text-decoration: none; 
+            font-weight: 800; 
+            border-radius: 2px; 
+            display: inline-block; 
+            transition: var(--transition); 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); background-color: var(--gold-hover); }
+
+        /* Footer */
+        footer { padding: 100px 5% 50px; background: #000; border-top: 1px solid var(--border-gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; }
+        .footer-logo { font-size: 1.8rem; font-weight: 800; color: var(--metallic-gold); margin-bottom: 30px; display: block; letter-spacing: 3px; }
+        .footer-col h5 { color: var(--metallic-gold); font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 18px; }
+        .footer-col a { color: #777; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .footer-col a:hover { color: var(--metallic-gold); }
+
+        .copyright { text-align: center; margin-top: 80px; color: #444; font-size: 0.85rem; border-top: 1px solid #111; padding-top: 40px; letter-spacing: 1px; }
+
+        @media (max-width: 1200px) {
+            .hero h1 { font-size: 3.5rem; }
+            .industry-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+            .quote-grid { grid-template-columns: 1fr; gap: 60px; }
+        }
+        @media (max-width: 768px) {
+            .industry-grid, .process-grid, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.8rem; }
+            header nav { display: none; }
+            .wa-float { bottom: 20px; right: 20px; padding: 15px 20px; font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/8618020755949" class="wa-float" target="_blank">
+        <span style="margin-right: 12px; font-size: 1.4rem;">💬</span>
+        <span>WhatsApp Support</span>
+    </a>
+
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
-                <ul>
-                    <li><a href="custom-boxes.html">Custom Boxes</a></li>
-                    <li><a href="box-labels.html">Box Labels</a></li>
-                    <li><a href="#quote">Wholesale Quote</a></li>
-                </ul>
-                <a href="https://wa.me/8618020755949" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">WhatsApp Us</a>
-            </nav>
-        </div>
+        <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="custom-boxes.html">Custom Boxes</a>
+            <a href="box-labels.html">Box Labels</a>
+            <a href="#quote">Quote Lab</a>
+        </nav>
     </header>
 
     <section class="hero">
-        <div class="container">
-            <h1>Premium Luxury Packaging & Wholesale Labels</h1>
-            <p>Define your brand's unboxing experience with industrial precision and luxury aesthetics. GloryStarPack provides bespoke cardboard boxes and branded labels for high-growth enterprises worldwide.</p>
-            <div style="display: flex; gap: 20px; justify-content: center;">
-                <a href="#quote" class="btn btn-primary">Start Bespoke Project</a>
-                <a href="custom-boxes.html" class="btn btn-outline">Explore Solutions</a>
+        <div class="hero-content">
+            <h1>Industrial Precision. <br> Luxury Aesthetic.</h1>
+            <p>The global gold standard for custom packaging. Direct-to-factory manufacturing, elite design support, and 14-day global priority delivery.</p>
+            <div style="display: flex; gap: 25px; justify-content: center;">
+                <a href="#quote" class="cta-button">Get My Quote</a>
+                <a href="custom-boxes.html" class="cta-button" style="background: transparent; border: 1px solid var(--metallic-gold); color: var(--metallic-gold);">Explore Products</a>
             </div>
         </div>
     </section>
 
-    <div class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item"><h3>1</h3><p>MINIMUM ORDER</p></div>
-                <div class="stat-item"><h3>FREE</h3><p>3D DESIGN SUPPORT</p></div>
-                <div class="stat-item"><h3>7-14</h3><p>DAY FAST DELIVERY</p></div>
-                <div class="stat-item"><h3>45%</h3><p>WHOLESALE SAVINGS</p></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="container" style="padding: 120px 0;">
+    <section class="section section-dark">
         <div class="section-header">
-            <h2>Elite Packaging for Every Industry</h2>
-            <p>From apparel and cosmetics to tech and logistics, we manufacture the skin that protects your product's soul.</p>
+            <h2>Tailored Industry Solutions</h2>
+            <p>Packaging is the silent ambassador of your brand. We've mastered the nuances of these core premium markets.</p>
         </div>
-        <div class="grid" style="padding-top: 0;">
-            <div class="card">
-                <h3>Custom Cardboard Boxes</h3>
-                <p>Luxury rigid boxes, reinforced shipping mailers, and eco-friendly kraft solutions engineered for durability and brand impact.</p>
-                <a href="custom-boxes.html" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">VIEW BOX LAB →</a>
-            </div>
-            <div class="card">
-                <h3>High-End Branded Labels</h3>
-                <p>Metallic foil accents, embossed textures, and waterproof industrial stickers that perfect the final touch of your packaging.</p>
-                <a href="box-labels.html" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">VIEW LABEL LAB →</a>
-            </div>
-            <div class="card">
-                <h3>Global Wholesale Tiers</h3>
-                <p>Benefit from our massive production capacity. Tiered pricing structures designed for scaling retail and e-commerce brands.</p>
-                <a href="#quote" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">REQUEST TIERS →</a>
-            </div>
+        <div class="industry-grid">
+            <div class="industry-card"><span class="icon">👕</span><h3>Fashion & Apparel</h3><p>Luxury mailers and reinforced boxes designed to mirror the elegance of premium garments.</p></div>
+            <div class="industry-card"><span class="icon">💄</span><h3>Health & Beauty</h3><p>Precision-engineered cosmetics packaging featuring Spot UV and soft-touch finishes for luxury appeal.</p></div>
+            <div class="industry-card"><span class="icon">💻</span><h3>Consumer Electronics</h3><p>High-protection reinforced structures with professional technical branding for premium tech products.</p></div>
+            <div class="industry-card"><span class="icon">🍷</span><h3>Food & Beverage</h3><p>Eco-safe, food-grade certified packaging solutions designed for premium wine, spirits, and gourmet goods.</p></div>
+            <div class="industry-card"><span class="icon">💎</span><h3>Jewelry & Gifts</h3><p>Bespoke magnetic rigid boxes and luxury label kits for high-value unboxing experiences.</p></div>
+            <div class="industry-card"><span class="icon">📦</span><h3>Global Logistics</h3><p>Bulk wholesale cartons and industrial-grade shipping labels for maximum global scale and efficiency.</p></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The GloryStar Advantage</h2>
+            <p>Why elite brands choose us over traditional reselling platforms. We are your direct manufacturing partner.</p>
+        </div>
+        <div class="advantage-container">
+            <table class="advantage-table">
+                <thead><tr><th>Feature</th><th>GloryStarPack (Factory Direct)</th><th>Typical Resellers</th></tr></thead>
+                <tbody>
+                    <tr><td>Production Pricing</td><td class="highlight">Factory-Direct (Save 45%)</td><td>Heavy Reseller Markups (+30% to +50%)</td></tr>
+                    <tr><td>Minimum Order (MOQ)</td><td class="highlight">1 Unit (Start Growing)</td><td>500 - 1,000 Unit Minimums</td></tr>
+                    <tr><td>Design & 3D Lab</td><td class="highlight">Free Professional Mockups</td><td>Paid Service or Static Templates</td></tr>
+                    <tr><td>Delivery Speed</td><td class="highlight">7-14 Day Global Express</td><td>30 - 45 Day Standard Shipping</td></tr>
+                    <tr><td>Quality Control</td><td class="highlight">Integrated 5-Point QC</td><td>Third-Party Outsourced Check</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="section-header">
+            <h2>The 6-Step Manufacturing Journey</h2>
+            <p>From creative concept to global doorstep. We've optimized the B2B packaging experience into six precise steps.</p>
+        </div>
+        <div class="process-grid">
+            <div class="step"><span>01</span><h4>Consultation</h4><p>Define your dimensions, material weight, and luxury finishing with our B2B consultants.</p></div>
+            <div class="step"><span>02</span><h4>3D Modeling</h4><p>Visualize your brand in a high-fidelity 3D digital environment before mass production.</p></div>
+            <div class="step"><span>03</span><h4>Prototyping</h4><p>Digital proofing and physical sampling to ensure 100% pixel-perfect accuracy.</p></div>
+            <div class="step"><span>04</span><h4>Manufacturing</h4><p>High-definition printing and bespoke finishes applied in our advanced factory facilities.</p></div>
+            <div class="step"><span>05</span><h4>QC Laboratory</h4><p>Rigorous 5-point inspection for color accuracy, structural integrity, and finish durability.</p></div>
+            <div class="step"><span>06</span><h4>Global Dispatch</h4><p>Tracked international shipping at wholesale rates, delivered worldwide in 14 days.</p></div>
         </div>
     </section>
 
     <section id="quote">
-        <div class="container">
-            <div class="section-header">
-                <h2>Request Your Bespoke Quote</h2>
-                <p>Partner with GloryStarPack today. Our experts deliver tailored manufacturing quotes within 24 business hours.</p>
+        <div class="quote-grid">
+            <div class="quote-info">
+                <h2>Achieve Packaging Perfection</h2>
+                <p>Ready to level up your brand's physical presence? Join over 5,000 brands that trust GloryStarPack for their manufacturing needs.</p>
+                <div class="contact-card">
+                    <div class="contact-item"><h5>DIRECT EMAIL</h5><p>kevin@GloryStarPack.com</p></div>
+                    <div class="contact-item"><h5>WHATSAPP / PHONE</h5><p>+86 18020755949</p></div>
+                    <div class="contact-item"><h5>RESPONSE TIME</h5><p>Within 2 Hours (Global B2B Support)</p></div>
+                </div>
             </div>
-            <div class="contact-box">
-                <div style="text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-                    <div>
-                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">DIRECT EMAIL</h4>
-                        <p style="font-size: 1.1rem;">kevin@glorystarwears.com</p>
+            <div style="background: #111; padding: 60px; border: 1px solid var(--border-gold); border-radius: 4px;">
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
+                        <div style="text-align: left;"><label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">NAME</label><input type="text" placeholder="John Doe" style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff;"></div>
+                        <div style="text-align: left;"><label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">COMPANY</label><input type="text" placeholder="Brand Inc." style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff;"></div>
                     </div>
-                    <div>
-                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">WHATSAPP LINE</h4>
-                        <p style="font-size: 1.1rem;">+86 18020755949</p>
+                    <div style="text-align: left; margin-bottom: 25px;">
+                        <label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">CATEGORY</label>
+                        <select style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff; font-family:inherit;">
+                            <option>Custom Mailer Boxes</option>
+                            <option>Rigid Luxury Boxes</option>
+                            <option>Wholesale Box Labels</option>
+                            <option>Full Packaging Suite</option>
+                        </select>
                     </div>
-                    <div>
-                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">GLOBAL HQ</h4>
-                        <p style="font-size: 1.1rem; opacity: 0.6;">Crafted for Glory. Delivered Worldwide.</p>
+                    <div style="text-align: left; margin-bottom: 40px;">
+                        <label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">SPECIFICATIONS</label>
+                        <textarea rows="4" placeholder="Dimensions, Material, Quantity..." style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff; font-family:inherit;"></textarea>
                     </div>
-                </div>
-                <div style="margin-top: 50px;">
-                    <a href="https://wa.me/8618020755949" class="btn btn-primary" style="width: 100%;">Chat with a Consultant Now</a>
-                </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">REQUEST PROFESSIONAL QUOTE</button>
+                </form>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <h2 class="logo">GLORYSTAR<span>PACK</span></h2>
-            <p style="color: #666; max-width: 500px; margin: 30px auto;">Defining luxury packaging for the global elite. Member of the GloryStar Group. All Rights Reserved.</p>
-            <div class="footer-bottom">
-                <p>&copy; 2026 GloryStarPack Manufacturing Co., Ltd. | PRIVACY | TERMS</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <span class="footer-logo">GLORYSTARPACK</span>
+                <p style="color: #666; font-size: 0.85rem; line-height: 1.8;">The premier global destination for luxury industrial packaging. We empower brands with factory-direct precision and elite design capabilities. Member of the GloryStar Group.</p>
             </div>
+            <div class="footer-col">
+                <h5>Product Solutions</h5>
+                <ul>
+                    <li><a href="custom-boxes.html">Mailer Boxes</a></li>
+                    <li><a href="custom-boxes.html">Rigid Luxury Boxes</a></li>
+                    <li><a href="box-labels.html">Custom Labels</a></li>
+                    <li><a href="#">Eco-Sustainable Range</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>The Brand</h5>
+                <ul>
+                    <li><a href="#">About GloryStar</a></li>
+                    <li><a href="#">Our Process</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Global Priority</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="https://wa.me/8618020755949">WhatsApp Chat</a></li>
+                    <li><a href="#quote">Quote Lab</a></li>
+                    <li><a href="#">Design Guide</a></li>
+                    <li><a href="#">Tracking</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group ecosystem.
         </div>
     </footer>
 
