@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GloryStarPack | Premium Custom Box & Label Wholesale | No MOQ</title>
+    <meta name="description" content="Elevate your brand with GloryStarPack. Premium custom cardboard boxes and branded labels at wholesale prices. Low MOQ, fast 7-14 day global delivery. Part of the GloryStar Group.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #1A1A1B;
+            --metallic-gold: #D4AF37;
+            --gold-hover: #F4CF67;
+            --text-white: #FFFFFF;
+            --dark-grey: #2D2D2E;
+            --bg-light: #2A2A2B;
+            --border: rgba(212, 175, 55, 0.2);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-white);
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            font-weight: 700;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .btn-primary { background-color: var(--metallic-gold); color: var(--primary-black); }
+        .btn-primary:hover { background-color: var(--gold-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3); }
+        .btn-outline { background-color: transparent; border: 1px solid var(--metallic-gold); color: var(--metallic-gold); }
+        .btn-outline:hover { background-color: var(--metallic-gold); color: var(--primary-black); }
+
+        header {
+            background-color: rgba(26, 26, 27, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav { height: 90px; display: flex; justify-content: space-between; align-items: center; }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--metallic-gold); letter-spacing: 2px; }
+        .logo span { color: var(--text-white); }
+
+        nav ul { display: flex; gap: 40px; list-style: none; }
+        nav ul a { font-size: 0.85rem; font-weight: 500; opacity: 0.8; }
+        nav ul a:hover { color: var(--metallic-gold); opacity: 1; }
+
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 120px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 25px; }
+        .hero p { font-size: 1.2rem; max-width: 850px; margin: 0 auto 50px; color: #CCC; }
+
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--metallic-gold); margin-bottom: 20px; }
+        .section-header p { color: #888; max-width: 700px; margin: 0 auto; }
+
+        .stats { padding: 100px 0; background: #000; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; text-align: center; }
+        .stat-item h3 { color: var(--metallic-gold); font-size: 3rem; margin-bottom: 10px; }
+        .stat-item p { font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; color: #888; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 100px 0; }
+        .card { background: var(--dark-grey); padding: 40px; border: 1px solid #333; transition: var(--transition); }
+        .card:hover { border-color: var(--metallic-gold); transform: translateY(-5px); }
+        .card h3 { color: var(--metallic-gold); margin-bottom: 20px; font-size: 1.25rem; }
+        .card p { color: #888; font-size: 0.95rem; margin-bottom: 30px; }
+
+        #quote { padding: 120px 0; background: #111; text-align: center; }
+        .contact-box { max-width: 800px; margin: 60px auto; background: var(--bg-light); border: 1px solid var(--border); padding: 50px; position: relative; }
+        .contact-box::before { content: ''; position: absolute; top: 10px; left: 10px; right: -10px; bottom: -10px; border: 1px solid var(--metallic-gold); z-index: -1; }
+
+        footer { padding: 100px 0 50px; background: #000; border-top: 1px solid var(--border); text-align: center; }
+        .footer-bottom { margin-top: 50px; padding-top: 40px; border-top: 1px solid #222; color: #555; font-size: 0.8rem; letter-spacing: 1px; }
+
+        @media (max-width: 1024px) { .hero h1 { font-size: 2.5rem; } .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .stats-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
+                <ul>
+                    <li><a href="custom-boxes.html">Custom Boxes</a></li>
+                    <li><a href="box-labels.html">Box Labels</a></li>
+                    <li><a href="#quote">Wholesale Quote</a></li>
+                </ul>
+                <a href="https://wa.me/8618020755949" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.75rem;">WhatsApp Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Premium Luxury Packaging & Wholesale Labels</h1>
+            <p>Define your brand's unboxing experience with industrial precision and luxury aesthetics. GloryStarPack provides bespoke cardboard boxes and branded labels for high-growth enterprises worldwide.</p>
+            <div style="display: flex; gap: 20px; justify-content: center;">
+                <a href="#quote" class="btn btn-primary">Start Bespoke Project</a>
+                <a href="custom-boxes.html" class="btn btn-outline">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item"><h3>1</h3><p>MINIMUM ORDER</p></div>
+                <div class="stat-item"><h3>FREE</h3><p>3D DESIGN SUPPORT</p></div>
+                <div class="stat-item"><h3>7-14</h3><p>DAY FAST DELIVERY</p></div>
+                <div class="stat-item"><h3>45%</h3><p>WHOLESALE SAVINGS</p></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container" style="padding: 120px 0;">
+        <div class="section-header">
+            <h2>Elite Packaging for Every Industry</h2>
+            <p>From apparel and cosmetics to tech and logistics, we manufacture the skin that protects your product's soul.</p>
+        </div>
+        <div class="grid" style="padding-top: 0;">
+            <div class="card">
+                <h3>Custom Cardboard Boxes</h3>
+                <p>Luxury rigid boxes, reinforced shipping mailers, and eco-friendly kraft solutions engineered for durability and brand impact.</p>
+                <a href="custom-boxes.html" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">VIEW BOX LAB →</a>
+            </div>
+            <div class="card">
+                <h3>High-End Branded Labels</h3>
+                <p>Metallic foil accents, embossed textures, and waterproof industrial stickers that perfect the final touch of your packaging.</p>
+                <a href="box-labels.html" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">VIEW LABEL LAB →</a>
+            </div>
+            <div class="card">
+                <h3>Global Wholesale Tiers</h3>
+                <p>Benefit from our massive production capacity. Tiered pricing structures designed for scaling retail and e-commerce brands.</p>
+                <a href="#quote" style="color: var(--metallic-gold); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">REQUEST TIERS →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote">
+        <div class="container">
+            <div class="section-header">
+                <h2>Request Your Bespoke Quote</h2>
+                <p>Partner with GloryStarPack today. Our experts deliver tailored manufacturing quotes within 24 business hours.</p>
+            </div>
+            <div class="contact-box">
+                <div style="text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+                    <div>
+                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">DIRECT EMAIL</h4>
+                        <p style="font-size: 1.1rem;">kevin@glorystarwears.com</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">WHATSAPP LINE</h4>
+                        <p style="font-size: 1.1rem;">+86 18020755949</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--metallic-gold); margin-bottom: 10px;">GLOBAL HQ</h4>
+                        <p style="font-size: 1.1rem; opacity: 0.6;">Crafted for Glory. Delivered Worldwide.</p>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;">
+                    <a href="https://wa.me/8618020755949" class="btn btn-primary" style="width: 100%;">Chat with a Consultant Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h2 class="logo">GLORYSTAR<span>PACK</span></h2>
+            <p style="color: #666; max-width: 500px; margin: 30px auto;">Defining luxury packaging for the global elite. Member of the GloryStar Group. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 GloryStarPack Manufacturing Co., Ltd. | PRIVACY | TERMS</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
