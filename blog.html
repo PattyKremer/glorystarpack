@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Story & Blog | GloryStarPack | The Soul of Luxury Packaging</title>
+    <meta name="description" content="Discover the story behind GloryStarPack. Read our blog for packaging trends, design tips, and industry insights. Luxury boxes, custom labels, and global branding.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --primary-black: #0A0A0B; 
+            --deep-grey: #121214;
+            --metallic-gold: #D4AF37; 
+            --gold-hover: #F4CF67;
+            --text-white: #FFFFFF; 
+            --text-grey: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.2); 
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary-black); 
+            color: var(--text-white); 
+            line-height: 1.6; 
+        }
+        
+        /* Navigation */
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-gold); 
+            position: fixed; 
+            width: 100%;
+            top: 0; 
+            background: rgba(10, 10, 11, 0.95); 
+            backdrop-filter: blur(10px);
+            z-index: 1000; 
+        }
+        .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
+        .logo span { color: var(--text-white); font-weight: 300; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
+        nav a:hover { color: var(--metallic-gold); }
+
+        .hero-sub { 
+            padding: 180px 10% 120px; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png'); 
+            background-size: cover; 
+            background-position: center; 
+            border-bottom: 1px solid var(--border-gold); 
+        }
+        .hero-sub h1 { font-size: 3rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 4px; }
+
+        .section { padding: 80px 10%; }
+        .section-dark { background: #111; }
+        
+        /* Brand Story */
+        .story-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .story-content h2 { color: var(--metallic-gold); font-size: 2.2rem; margin-bottom: 30px; text-transform: uppercase; }
+        .story-content p { color: #bbb; margin-bottom: 20px; font-size: 1.05rem; }
+        .story-image img { width: 100%; border: 1px solid var(--border-gold); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+        /* Blog Grid */
+        .blog-header { text-align: center; margin-bottom: 60px; }
+        .blog-header h2 { color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .blog-card { background: var(--dark-grey); border: 1px solid #333; transition: var(--transition); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
+        .blog-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
+        .blog-img { height: 220px; background-size: cover; background-position: center; }
+        .blog-content { padding: 30px; flex-grow: 1; }
+        .blog-date { color: var(--metallic-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+        .blog-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-white); transition: 0.3s; }
+        .blog-card:hover h3 { color: var(--metallic-gold); }
+        .blog-excerpt { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
+        .read-more { color: var(--metallic-gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid transparent; transition: 0.3s; }
+        .read-more:hover { border-bottom: 1px solid var(--metallic-gold); }
+
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
+        
+        @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } .story-container { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .hero-sub h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="custom-boxes.html">Boxes</a>
+            <a href="box-labels.html">Labels</a>
+            <a href="blog.html" style="color: var(--metallic-gold);">Story</a>
+            <a href="index.html#quote">Get Quote</a>
+        </nav>
+    </header>
+
+    <section class="hero-sub">
+        <h1>GloryStar Insights</h1>
+        <p>Crafting the Narrative of Luxury and Precision.</p>
+    </section>
+
+    <section class="section">
+        <div class="story-container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>GloryStarPack was born from a simple yet powerful realization: in the world of high-end brands, the first touchpoint isn't the product—it's the packaging.</p>
+                <p>Founded as a specialized division of the GloryStar Group, we set out to bridge the gap between industrial-scale manufacturing and artisanal design. We didn't want to be just another supplier; we wanted to be the silent architects of the unboxing experience.</p>
+                <p>Today, from our advanced factory facilities, we empower thousands of brands worldwide to tell their story through textured papers, metallic foils, and structural engineering that defies the ordinary. We believe that every box carries a promise, and every label seals a reputation.</p>
+            </div>
+            <div class="story-image">
+                <img src="https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png" alt="GloryStarPack Craftsmanship">
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="blog-header">
+            <h2>The Packaging Journal</h2>
+            <p>Expert insights on design trends, material innovation, and brand strategy.</p>
+        </div>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png');"></div>
+                <div class="blog-content">
+                    <span class="blog-date">APRIL 3, 2026</span>
+                    <h3>The Art of the Unboxing: Why Experience is the New Marketing</h3>
+                    <p class="blog-excerpt">Explore how custom rigid boxes and luxury finishes create emotional connections with customers the moment they receive their package.</p>
+                    <a href="#" class="read-more">Read Entry</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png');"></div>
+                <div class="blog-content">
+                    <span class="blog-date">MARCH 25, 2026</span>
+                    <h3>Metallic Foil vs. Spot UV: Choosing the Right Luxury Finish</h3>
+                    <p class="blog-excerpt">A technical guide for designers on selecting premium label finishes that elevate brand perception and shelf presence.</p>
+                    <a href="#" class="read-more">Read Entry</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Aed0b78bad1344296b0473b9c7a3863019.png');"></div>
+                <div class="blog-content">
+                    <span class="blog-date">MARCH 12, 2026</span>
+                    <h3>Sustainable Luxury: The Rise of FSC-Certified Custom Packaging</h3>
+                    <p class="blog-excerpt">How modern brands are balancing environmental responsibility with premium aesthetics in their shipping solutions.</p>
+                    <a href="#" class="read-more">Read Entry</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
+    </footer>
+</body>
+</html>

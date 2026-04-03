@@ -3,42 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Packaging Boxes | GloryStarPack | Mailers, Cartons, Luxury Gift Boxes</title>
-    <meta name="description" content="Premium custom boxes for every brand. From E-commerce mailers to luxury rigid gift boxes and custom paper bags. GloryStarPack defines quality with wholesale pricing and no MOQ.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Custom Packaging Boxes | GloryStarPack | Rigid, Mailer, Wholesale Solutions</title>
+    <meta name="description" content="Custom luxury boxes, mailers, and cartons for global B2B brands. High-end rigid gift boxes with low MOQ and factory direct pricing by GloryStarPack.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --text-white: #FFFFFF; --dark-grey: #222222; --border-gold: rgba(212, 175, 55, 0.3); }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
-        header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); position: sticky; top: 0; background: rgba(26, 26, 27, 0.98); z-index: 1000; }
-        .logo { font-size: 24px; font-weight: 700; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
-        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        :root { 
+            --primary-black: #0A0A0B; 
+            --deep-grey: #121214;
+            --metallic-gold: #D4AF37; 
+            --gold-hover: #F4CF67;
+            --text-white: #FFFFFF; 
+            --text-grey: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.2); 
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary-black); 
+            color: var(--text-white); 
+            line-height: 1.6; 
+        }
+        
+        /* Navigation */
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-gold); 
+            position: fixed; 
+            width: 100%;
+            top: 0; 
+            background: rgba(10, 10, 11, 0.95); 
+            backdrop-filter: blur(10px);
+            z-index: 1000; 
+        }
+        .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
+        .logo span { color: var(--text-white); font-weight: 300; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
         nav a:hover { color: var(--metallic-gold); }
-        .hero-sub { padding: 120px 10% 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png'); background-size: cover; background-position: center; }
+
+        .hero-sub { 
+            padding: 180px 10% 120px; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sc02.alicdn.com/kf/A5afd1e56d9e341fdbb05ccc66670bc928.png'); 
+            background-size: cover; 
+            background-position: center; 
+            border-bottom: 1px solid var(--border-gold);
+        }
         .hero-sub h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
         .section { padding: 80px 10%; }
         .section-dark { background-color: #111; }
         .section-title { text-align: center; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; }
         
         /* Product Matrix */
-        .box-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        @media (max-width: 1200px) { .box-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 800px) { .box-grid { grid-template-columns: 1fr; } }
+
         .box-card { background: #222; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
         .box-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
         .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
         .card-content { padding: 40px; }
-        .box-card h3 { color: var(--metallic-gold); font-size: 1.6rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; }
-        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.85rem; }
-        .spec-table td { padding: 12px 0; border-bottom: 1px solid #333; }
+        .box-card h3 { color: var(--metallic-gold); font-size: 1.4rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; min-height: 2.8rem; display: flex; align-items: center; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.8rem; }
+        .spec-table td { padding: 10px 0; border-bottom: 1px solid #333; }
         .spec-table td:first-child { color: var(--metallic-gold); font-weight: 700; width: 45%; }
         
-        /* Process Flow */
-        .process-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: center; }
-        .step { background: #1a1a1a; padding: 30px; border: 1px solid #333; }
-        .step-num { color: var(--metallic-gold); font-size: 2rem; font-weight: 700; display: block; margin-bottom: 10px; }
-
         /* Scenarios */
-        .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .scenario-item { background: #222; padding: 30px; border-left: 4px solid var(--metallic-gold); }
-        .scenario-item h4 { color: var(--metallic-gold); margin-top: 0; }
+        .scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .scenario-item { background: #111; padding: 40px; border: 1px solid #444; text-align: center; }
+        .scenario-item h4 { color: var(--metallic-gold); margin-top: 0; margin-bottom: 15px; text-transform: uppercase; }
+        .scenario-item p { font-size: 0.9rem; color: #888; }
 
         footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
         .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
@@ -47,40 +87,74 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">GLORYSTARPACK</a>
+        <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="custom-boxes.html" style="color: var(--metallic-gold);">Custom Boxes</a>
-            <a href="box-labels.html">Box Labels</a>
-            <a href="index.html#quote">Get A Quote</a>
+            <a href="custom-boxes.html" style="color: var(--metallic-gold);">Boxes</a>
+            <a href="box-labels.html">Labels</a>
+            <a href="blog.html">Story</a>
+            <a href="index.html#quote">Get Quote</a>
         </nav>
     </header>
 
     <section class="hero-sub">
-        <h1>Bespoke Box Solutions</h1>
-        <p>Premium Structural Engineering Meets High-End Custom Branding.</p>
+        <h1>Engineering Premium Boxes</h1>
+        <p>Advanced structural engineering and luxury finishes for world-class brands.</p>
     </section>
 
-    <!-- 4 Step Process -->
+    <!-- Technical Specifications -->
     <section class="section section-dark">
-        <h2 class="section-title">The Box Customization Journey</h2>
-        <div class="process-flow">
-            <div class="step"><span class="step-num">01</span><h4>Specification</h4><p>Choose your dimensions, box type, and structural weight.</p></div>
-            <div class="step"><span class="step-num">02</span><h4>3D Rendering</h4><p>Review a high-fidelity 3D mockup of your design.</p></div>
-            <div class="step"><span class="step-num">03</span><h4>Prototyping</h4><p>Confirm the final digital proof before production.</p></div>
-            <div class="step"><span class="step-num">04</span><h4>Global Dispatch</h4><p>Receive your wholesale order in 14 business days.</p></div>
+        <h2 class="section-title">Material Engineering Specs</h2>
+        <p style="text-align: center; color: #888; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">We utilize high-density chipboards and FSC-certified art papers to ensure structural integrity and premium tactile feel.</p>
+        <div style="overflow-x: auto;">
+            <table class="spec-table" style="width: 100%; max-width: 1000px; margin: 0 auto; background: #1a1a1a; border: 1px solid #333;">
+                <thead style="background: #222;">
+                    <tr>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Box Type</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Core Material</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Standard GSM/Thickness</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Best For</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Luxury Rigid Box</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">High-Density Greyboard</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">1200 - 2000 GSM</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Jewelry, High-end Tech, Perfumes</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">E-commerce Mailer</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">E/B Flute Corrugated</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">250 - 350 GSM Kraft Face</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Subscription Boxes, Apparel</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Product Carton</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">C1S / C2S Art Paper</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">300 - 450 GSM</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Cosmetics, Pharmaceuticals, Retail</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Luxury Paper Bag</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Reinforced White Card</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">210 - 300 GSM</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Boutiques, Events, Luxury Retail</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
     <!-- Custom Box Categories -->
-    <section class="section">
-        <h2 class="section-title">Our Production Categories</h2>
+    <section class="section" id="products">
+        <h2 class="section-title">The GloryStar Packaging Matrix</h2>
         <div class="box-grid">
-            <!-- Mailer Box (飞机盒) -->
+            <!-- Mailer Box -->
             <div class="box-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Aed0b78bad1344296b0473b9c7a3863019.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A9703a0e5213e4f2c86ad7a4ade4d7c2av.png');"></div>
                 <div class="card-content">
-                    <h3>Custom Mailer Boxes (飞机盒)</h3>
+                    <h3>Custom Mailer Boxes</h3>
                     <p>The premium choice for E-commerce and subscription brands. Lightweight yet high-strength.</p>
                     <table class="spec-table">
                         <tr><td>Material Grade</td><td>E-Flute / B-Flute Corrugated</td></tr>
@@ -91,11 +165,11 @@
                 </div>
             </div>
 
-            <!-- Shipping Carton (纸箱) -->
+            <!-- Shipping Carton -->
             <div class="box-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Aea40df5463fc4baca788fb6de41dc748H.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A6060e5a7e9ab4156b8b09054d155b774t.png');"></div>
                 <div class="card-content">
-                    <h3>Shipping & Logistics Cartons (纸箱)</h3>
+                    <h3>Shipping & Logistics Cartons</h3>
                     <p>Heavy-duty industrial cartons for bulk shipping and safe international logistics.</p>
                     <table class="spec-table">
                         <tr><td>Material Grade</td><td>Single / Double Wall Reinforced</td></tr>
@@ -106,11 +180,11 @@
                 </div>
             </div>
 
-            <!-- Luxury Gift Box (礼品包装盒) -->
+            <!-- Luxury Gift Box -->
             <div class="box-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A2c26395bb67d46d0bd59dfcc28b760e11.png');"></div>
                 <div class="card-content">
-                    <h3>Luxury Rigid Gift Boxes (礼品盒)</h3>
+                    <h3>Luxury Rigid Gift Boxes</h3>
                     <p>Magnetic closures and premium greyboard for jewelry, tech, and boutique gifts.</p>
                     <table class="spec-table">
                         <tr><td>Material Grade</td><td>1200gsm - 2000gsm Greyboard</td></tr>
@@ -121,17 +195,47 @@
                 </div>
             </div>
 
-            <!-- Gift Bag (礼品包装袋) -->
+            <!-- Gift Bag -->
             <div class="box-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acc7d37b590824df58d1297017e4f82a9N.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acd5734efb7c74ba2960542e35052588ao.png');"></div>
                 <div class="card-content">
-                    <h3>Premium Branded Gift Bags (礼品袋)</h3>
+                    <h3>Premium Branded Gift Bags</h3>
                     <p>Custom paper bags with ribbon handles and high-end printing for retail boutiques.</p>
                     <table class="spec-table">
                         <tr><td>Material Grade</td><td>250gsm - 350gsm Art Paper</td></tr>
                         <tr><td>Handle Type</td><td>Ribbon / Cotton / Twisted</td></tr>
                         <tr><td>Finishing</td><td>Matte / Gloss Lamination</td></tr>
                         <tr><td>MOQ</td><td>Retail Scalable Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Cosmetic Packaging -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A3b416b50dbcf49f088860eeb71f5bd88U.png');"></div>
+                <div class="card-content">
+                    <h3>Cosmetic & Beauty Sets</h3>
+                    <p>Elegant packaging solutions for skincare, perfumes, and high-end beauty products.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>Soft-Touch Pearl Paper</td></tr>
+                        <tr><td>Decoration</td><td>Rose Gold Foil / Embossing</td></tr>
+                        <tr><td>Inner Tray</td><td>Custom Molded Pulp / EVA</td></tr>
+                        <tr><td>MOQ</td><td>Bespoke Project Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Sustainable Kraft Box -->
+            <div class="box-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acd57c0fd264f468ab373351c2c13dd051.png');"></div>
+                <div class="card-content">
+                    <h3>Eco-Friendly Kraft Boxes</h3>
+                    <p>Sustainable, minimalist designs using 100% recycled fibers for a modern aesthetic.</p>
+                    <table class="spec-table">
+                        <tr><td>Material Grade</td><td>FSC Certified Kraft Board</td></tr>
+                        <tr><td>Coating</td><td>Plastic-Free Matte Finish</td></tr>
+                        <tr><td>Inks</td><td>Biodegradable Soy Inks</td></tr>
+                        <tr><td>MOQ</td><td>Eco-Starter Tiers</td></tr>
                     </table>
                 </div>
             </div>
@@ -160,23 +264,23 @@
         <div class="scenario-grid" style="margin-top: 40px;">
             <div class="scenario-item">
                 <h4>E-commerce Drops</h4>
-                <p>Viral unboxing experiences with branded mailers and inside-print customization.</p>
+                <p>High-unboxing impact for D2C brands.</p>
             </div>
             <div class="scenario-item">
-                <h4>Retail Presence</h4>
-                <p>Consistent branding from high-end rigid gift boxes to premium boutique bags.</p>
+                <h4>Retail Boutiques</h4>
+                <p>Sophisticated shelf presence for high-end luxury.</p>
             </div>
             <div class="scenario-item">
-                <h4>Corporate Gifting</h4>
-                <p>Professional presentation for tech launches, employee kits, and executive gifts.</p>
+                <h4>B2B Industrial</h4>
+                <p>Safe, branded bulk shipping for global logistics.</p>
             </div>
         </div>
     </section>
 
     <section style="padding: 100px 10%; text-align: center; background: #000;">
-        <h2 style="color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase;">Ready to Start Your Order?</h2>
-        <p style="color: #888; margin-bottom: 50px;">Consult with our B2B experts for a tailored wholesale quote within 24 hours.</p>
-        <a href="https://wa.me/8618020755949" class="cta-button">Chat with B2B Specialist</a>
+        <h2 style="color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase;">Request Wholesale Box Quote</h2>
+        <p style="color: #888; margin-bottom: 50px;">Receive a tailored quote and structural design advice within 24 hours.</p>
+        <a href="https://wa.me/8618020755949" class="cta-button">Consult with Packaging Expert</a>
     </section>
 
     <footer>

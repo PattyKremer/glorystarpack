@@ -5,29 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Branded Labels | GloryStarPack | Wholesale, Waterproof, Luxury Accents</title>
     <meta name="description" content="High-end custom labels for your packaging. Explore metallic foil, embossed, and waterproof custom labels with GloryStarPack's luxury finishing and wholesale rates.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-black: #1A1A1B; --metallic-gold: #D4AF37; --text-white: #FFFFFF; --dark-grey: #222222; --border-gold: rgba(212, 175, 55, 0.3); }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
-        header { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-gold); position: sticky; top: 0; background: rgba(26, 26, 27, 0.98); z-index: 1000; }
-        .logo { font-size: 24px; font-weight: 700; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
-        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        :root { 
+            --primary-black: #0A0A0B; 
+            --deep-grey: #121214;
+            --metallic-gold: #D4AF37; 
+            --gold-hover: #F4CF67;
+            --text-white: #FFFFFF; 
+            --text-grey: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.2); 
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--primary-black); 
+            color: var(--text-white); 
+            line-height: 1.6; 
+        }
+        
+        /* Navigation */
+        header { 
+            padding: 20px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-gold); 
+            position: fixed; 
+            width: 100%;
+            top: 0; 
+            background: rgba(10, 10, 11, 0.95); 
+            backdrop-filter: blur(10px);
+            z-index: 1000; 
+        }
+        .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
+        .logo span { color: var(--text-white); font-weight: 300; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
         nav a:hover { color: var(--metallic-gold); }
-        .hero-sub { padding: 120px 10% 80px; text-align: center; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png'); background-size: cover; background-position: center; }
+        .hero-sub { 
+            padding: 180px 10% 120px; 
+            text-align: center; 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sc02.alicdn.com/kf/A5d4ba990a36d4b2189b7a83849e6cc6fc.png'); 
+            background-size: cover; 
+            background-position: center; 
+            border-bottom: 1px solid var(--border-gold);
+        }
         .hero-sub h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
         .section { padding: 80px 10%; }
         .section-dark { background-color: #111; }
         .section-title { text-align: center; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; }
         
         /* Label Matrix */
-        .label-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .label-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        @media (max-width: 1200px) { .label-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 800px) { .label-grid { grid-template-columns: 1fr; } }
+
         .label-card { background: #222; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
         .label-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
         .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
         .card-content { padding: 40px; }
-        .label-card h3 { color: var(--metallic-gold); font-size: 1.6rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; }
-        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.85rem; }
-        .spec-table td { padding: 12px 0; border-bottom: 1px solid #333; }
+        .label-card h3 { color: var(--metallic-gold); font-size: 1.4rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; min-height: 2.8rem; display: flex; align-items: center; }
+        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.8rem; }
+        .spec-table td { padding: 10px 0; border-bottom: 1px solid #333; }
         .spec-table td:first-child { color: var(--metallic-gold); font-weight: 700; width: 45%; }
         
         /* Finishing Gallery */
@@ -42,12 +85,13 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">GLORYSTARPACK</a>
+        <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
         <nav>
             <a href="index.html">Home</a>
-            <a href="custom-boxes.html">Custom Boxes</a>
-            <a href="box-labels.html" style="color: var(--metallic-gold);">Box Labels</a>
-            <a href="index.html#quote">Get A Quote</a>
+            <a href="custom-boxes.html">Boxes</a>
+            <a href="box-labels.html" style="color: var(--metallic-gold);">Labels</a>
+            <a href="blog.html">Story</a>
+            <a href="index.html#quote">Get Quote</a>
         </nav>
     </header>
 
@@ -56,13 +100,57 @@
         <p>Premium branding solutions designed to make your boxes unforgettable.</p>
     </section>
 
+    <!-- Specialty Label Materials -->
+    <section class="section section-dark">
+        <h2 class="section-title">Luxury Material Selection</h2>
+        <p style="text-align: center; color: #888; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">Our label stocks are curated for both high-end aesthetic appeal and extreme durability under varied B2B conditions.</p>
+        <div style="overflow-x: auto;">
+            <table class="spec-table" style="width: 100%; max-width: 1000px; margin: 0 auto; background: #1a1a1a; border: 1px solid #333;">
+                <thead style="background: #222;">
+                    <tr>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Label Type</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Base Material</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Best Finishing</th>
+                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">B2B Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Boutique Label</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Linen / Felt Textured Paper</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Hot Foil Stamping</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Wine & Spirits, Premium Food</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">High-End Metallic</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Silver / Gold PET Film</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Spot UV + Soft Touch</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Luxury Tech, Jewelry, Skincare</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Durable Synthetic</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">BOPP / Vinyl Film</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Anti-Scratch Lamination</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Toiletries, Beauty Products</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Eco-Artisan</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Recycled Kraft / Wood Pulp</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Water-Based Screen Print</td>
+                        <td style="padding: 20px; border-bottom: 1px solid #333;">Natural Skincare, Eco-Packaging</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
     <!-- Custom Label Categories -->
-    <section class="section">
+    <section class="section" id="products">
         <h2 class="section-title">Our Labeling Portfolio</h2>
         <div class="label-grid">
-            <!-- Metallic Foil (金箔) -->
+            <!-- Metallic Foil -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A297187a536b84b80ae47ae15c9fe79471.png');"></div>
                 <div class="card-content">
                     <h3>Metallic & Foil Accents</h3>
                     <p>Hot-stamped gold, silver, and copper foil for high-end boutique and tech packaging.</p>
@@ -75,9 +163,9 @@
                 </div>
             </div>
 
-            <!-- Industrial Waterproof (工业防水) -->
+            <!-- Industrial Waterproof -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Af289e7b451b843bda8ce3635a145e2c8f.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Af330b3faf7de441f954b7188c9c5fb42T.png');"></div>
                 <div class="card-content">
                     <h3>Waterproof Industrial Seals</h3>
                     <p>Heavy-duty adhesives and matte lamination for shipping cartons and outdoor warehousing.</p>
@@ -90,9 +178,9 @@
                 </div>
             </div>
 
-            <!-- Artisan Textured (纹理纸) -->
+            <!-- Artisan Textured -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Abedf34c9e97a4729abbea20726c18537P.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A96d59ad51c974bc4a7a281132d7a866ba.png');"></div>
                 <div class="card-content">
                     <h3>Artisan Textured Papers</h3>
                     <p>Premium tactile papers with linen or felt finish for wine, food, and high-end gifts.</p>
@@ -105,9 +193,9 @@
                 </div>
             </div>
 
-            <!-- Security Seals (防伪封条) -->
+            <!-- Security Seals -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A266beb9c5df340af9b101580477d2435x.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A9acc6aba8f6341c994fb72af060c70a0x.png');"></div>
                 <div class="card-content">
                     <h3>Tamper-Evident Security Seals</h3>
                     <p>Bespoke security labels to protect high-value B2B shipments and retail products.</p>
@@ -116,6 +204,36 @@
                         <tr><td>Visual</td><td>Holographic / Custom Print</td></tr>
                         <tr><td>Usage</td><td>Logistics / Electronics / Luxury</td></tr>
                         <tr><td>MOQ</td><td>Scalable B2B Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Wine Label -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A1b39e8e38f444f7f999a204915db21cbX.png');"></div>
+                <div class="card-content">
+                    <h3>Artisan Wine & Spirits Labels</h3>
+                    <p>Deep embossed, ice-bucket resistant labels for the world's finest vineyards and distilleries.</p>
+                    <table class="spec-table">
+                        <tr><td>Material</td><td>Estate Textured Paper</td></tr>
+                        <tr><td>Resistance</td><td>Water & Ice Persistent</td></tr>
+                        <tr><td>Finish</td><td>High-Build Spot UV</td></tr>
+                        <tr><td>MOQ</td><td>Premium Collection Tiers</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- RFID Label -->
+            <div class="label-card">
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A8b4be94190a74b79a2d08ee99652d9642.png');"></div>
+                <div class="card-content">
+                    <h3>Smart RFID Tracking Labels</h3>
+                    <p>Integrated RFID/NFC chips for seamless inventory management and anti-counterfeit protection.</p>
+                    <table class="spec-table">
+                        <tr><td>Technology</td><td>UHF / NFC Integrated</td></tr>
+                        <tr><td>Range</td><td>Long Range Read Capability</td></tr>
+                        <tr><td>Material</td><td>Durable Polyester Film</td></tr>
+                        <tr><td>MOQ</td><td>High-Volume Logistics Tier</td></tr>
                     </table>
                 </div>
             </div>
@@ -141,25 +259,6 @@
             <div class="finish-item"><h5>Permanent High-Tack</h5><p>For corrugated cartons and raw surfaces.</p></div>
             <div class="finish-item"><h5>Removable Adhesive</h5><p>Clean removal for seasonal promotions.</p></div>
             <div class="finish-item"><h5>Void-Visible Adhesive</h5><p>Instant tamper evidence for security.</p></div>
-        </div>
-    </section>
-
-    <!-- Why Custom Labels -->
-    <section class="section">
-        <div style="display: flex; gap: 50px; align-items: center;">
-            <div style="flex: 1;">
-                <h2 style="color: var(--metallic-gold); text-transform: uppercase;">Why Custom Labels?</h2>
-                <p style="color: #bbb;">A label is more than a sticker—it's the final seal of quality for your brand. Custom labels define your product's category, convey trust, and professionalize your packaging.</p>
-                <ul style="color: #888; padding-left: 20px; margin-top: 30px;">
-                    <li>✓ Professionalize generic box shipping</li>
-                    <li>✓ High-impact unboxing experiences</li>
-                    <li>✓ Security & logistics tracking integration</li>
-                    <li>✓ High-volume cost savings at wholesale rates</li>
-                </ul>
-            </div>
-            <div style="flex: 1;">
-                <img src="https://sc02.alicdn.com/kf/Ae2cf41a1c6b14d49bf318655bc145177g.png" style="width: 100%; border: 1px solid var(--border-gold);" alt="Premium Branding Labels">
-            </div>
         </div>
     </section>
 

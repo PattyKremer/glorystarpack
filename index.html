@@ -3,355 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GloryStarPack | Premium Custom Box & Label Wholesale | Global B2B Leader</title>
-    <meta name="description" content="GloryStarPack: Luxury custom packaging solutions. High-end boxes, premium labels, 0 MOQ, factory-direct pricing. Member of the GloryStar Group.">
+    <title>GloryStarPack | Luxury Packaging & Labels | Factory Direct B2B</title>
+    <meta name="description" content="GloryStarPack provides high-end luxury boxes and labels for premium brands. Custom packaging solutions with low MOQ, factory direct pricing, and 14-day global delivery.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary-black: #1A1A1B; 
+            --primary-black: #0A0A0B; 
+            --deep-grey: #121214;
             --metallic-gold: #D4AF37; 
             --gold-hover: #F4CF67;
             --text-white: #FFFFFF; 
-            --dark-grey: #222222; 
-            --mid-grey: #2D2D2E;
-            --border-gold: rgba(212, 175, 55, 0.3); 
+            --text-grey: #A0A0A0;
+            --border-gold: rgba(212, 175, 55, 0.2); 
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-        
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--primary-black); 
-            color: var(--text-white); 
-            line-height: 1.6; 
-            scroll-behavior: smooth; 
-        }
-        
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
+
         /* Navigation */
         header { 
-            padding: 15px 5%; 
+            padding: 20px 5%; 
             display: flex; 
             justify-content: space-between; 
             align-items: center; 
             border-bottom: 1px solid var(--border-gold); 
-            position: sticky; 
+            position: fixed; 
+            width: 100%;
             top: 0; 
-            background: rgba(26, 26, 27, 0.98); 
+            background: rgba(10, 10, 11, 0.95); 
+            backdrop-filter: blur(10px);
             z-index: 1000; 
         }
-        .logo { font-size: 24px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 3px; }
-        .logo span { color: var(--text-white); }
-        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
+        .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
+        .logo span { color: var(--text-white); font-weight: 300; }
+        nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
         nav a:hover { color: var(--metallic-gold); }
 
-        /* Hero */
-        .hero { 
+        /* Hero Slider */
+        .hero-slider { 
             height: 90vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png'); 
-            background-size: cover; 
-            background-position: center; 
-            padding: 0 10%; 
+            width: 100%;
+            position: relative;
+            overflow: hidden;
         }
-        .hero-content { max-width: 1000px; }
-        .hero h1 { font-size: 4.5rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 8px; margin-bottom: 25px; line-height: 1.1; font-weight: 800; }
-        .hero p { font-size: 1.4rem; margin: 0 auto 45px; color: #ddd; font-weight: 300; letter-spacing: 1px; }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .slide.active { opacity: 1; }
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.1);
+            transition: transform 35s linear;
+        }
+        .slide.active .slide-bg { transform: scale(1); }
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .hero-content { position: relative; z-index: 10; max-width: 900px; padding: 0 20px; }
+        .hero-content h1 { font-size: 4.5rem; color: var(--text-white); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 8px; }
+        .hero-content h1 span { color: var(--metallic-gold); font-weight: 800; }
+        .hero-content p { font-size: 1.1rem; color: #ddd; margin-bottom: 40px; letter-spacing: 2px; line-height: 1.8; }
+        
+        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
+        .cta-outline { border: 1px solid var(--metallic-gold); color: var(--metallic-gold); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
+        .cta-button:hover, .cta-outline:hover { transform: scale(1.05); background-color: #f1c40f; color: #000; border-color: #f1c40f; }
 
-        /* Floating WhatsApp Button */
-        .wa-float { 
-            position: fixed; 
-            bottom: 40px; 
-            right: 40px; 
-            background-color: #25d366; 
-            color: white; 
-            padding: 18px 30px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4); 
-            z-index: 9999; 
-            display: flex; 
-            align-items: center; 
-            transition: var(--transition); 
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-        .wa-float:hover { transform: translateY(-5px) scale(1.05); background-color: #128c7e; box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3); }
+        /* Trusted By */
+        .trusted-by { padding: 40px 5%; background: #000; text-align: center; border-bottom: 1px solid var(--border-gold); }
+        .trusted-by p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: #666; margin-bottom: 30px; }
+        .brand-logos { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; opacity: 0.6; filter: grayscale(1); }
+        .brand-logos span { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 2px; }
 
         /* Sections */
-        .section { padding: 120px 10%; }
-        .section-dark { background: #111; }
+        .section { padding: 100px 10%; position: relative; }
+        .section-dark { background-color: #111; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { color: var(--metallic-gold); font-size: 3rem; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
-        .section-header p { color: #888; font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
+        .section-header h2 { font-size: 2.8rem; color: var(--text-white); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
+        .section-header h2 span { color: var(--metallic-gold); }
+        .section-header p { color: #888; max-width: 700px; margin: 0 auto; line-height: 1.8; }
 
-        /* Industry Grid */
-        .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .industry-card { background: var(--dark-grey); padding: 60px 40px; text-align: center; border: 1px solid #333; transition: var(--transition); border-radius: 2px; }
-        .industry-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); background: #282828; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .industry-card .icon { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 25px; display: block; }
-        .industry-card h3 { color: var(--metallic-gold); font-size: 1.3rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-        .industry-card p { color: #999; font-size: 0.95rem; line-height: 1.7; }
+        /* Product Grid */
+        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .product-card { background: #1a1a1b; border: 1px solid #333; transition: 0.4s; position: relative; overflow: hidden; }
+        .product-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
+        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
+        .product-info { padding: 30px; text-align: center; }
+        .product-info h3 { color: var(--metallic-gold); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; }
+        .product-badge { position: absolute; top: 20px; right: 20px; background: var(--metallic-gold); color: #000; font-size: 0.7rem; font-weight: 700; padding: 5px 12px; text-transform: uppercase; z-index: 5; }
+        .product-specs { list-style: none; padding: 0; margin-bottom: 25px; font-size: 0.85rem; color: #888; }
+        .product-specs li { margin-bottom: 8px; display: flex; justify-content: space-between; border-bottom: 1px dotted #444; padding-bottom: 5px; }
+        .product-specs span { color: #fff; font-weight: 500; }
 
-        /* Advantage Table */
-        .advantage-container { overflow-x: auto; margin-top: 50px; }
-        .advantage-table { width: 100%; border-collapse: collapse; background: #000; border: 1px solid var(--border-gold); }
-        .advantage-table th, .advantage-table td { padding: 30px; border: 1px solid #333; text-align: left; }
-        .advantage-table th { color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; background: #080808; }
-        .advantage-table .highlight { color: var(--metallic-gold); font-weight: 800; background: rgba(212, 175, 55, 0.05); }
-        .advantage-table td { color: #BBB; font-size: 1rem; }
+        /* Process Steps */
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .process-step { position: relative; padding: 40px; background: #000; border: 1px solid #222; }
+        .step-badge { position: absolute; top: -15px; left: 40px; background: var(--metallic-gold); color: #000; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; border-radius: 50%; }
+        .process-step h3 { color: var(--metallic-gold); margin-top: 10px; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; }
+        .process-step p { font-size: 0.85rem; color: #777; line-height: 1.6; }
 
-        /* 6-Step Process */
-        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .step { background: #1a1a1b; padding: 50px; border-left: 5px solid var(--metallic-gold); position: relative; overflow: hidden; transition: var(--transition); border-radius: 2px; }
-        .step:hover { background: #222; transform: translateX(10px); }
-        .step span { font-size: 4.5rem; color: rgba(212, 175, 55, 0.05); position: absolute; top: -10px; right: 10px; font-weight: 800; }
-        .step h4 { color: var(--metallic-gold); font-size: 1.2rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1; }
-        .step p { font-size: 0.9rem; color: #888; line-height: 1.7; position: relative; z-index: 1; }
+        /* Stats Grid */
+        .stats-grid { display: flex; justify-content: space-around; padding: 80px 10%; background: #000; border-top: 1px solid var(--border-gold); }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 3rem; font-weight: 800; color: var(--metallic-gold); display: block; }
+        .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #666; }
 
-        /* Quote Section */
-        #quote { padding: 120px 10%; background: #000; text-align: center; border-top: 1px solid var(--border-gold); }
-        .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; text-align: left; align-items: start; max-width: 1400px; margin: 0 auto; }
-        .quote-info h2 { font-size: 3rem; color: var(--metallic-gold); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
-        .quote-info p { color: #AAA; margin-bottom: 50px; font-size: 1.1rem; }
-        
-        .contact-card { background: #1A1A1B; padding: 50px; border: 1px solid var(--border-gold); border-radius: 4px; }
-        .contact-item { margin-bottom: 35px; }
-        .contact-item:last-child { margin-bottom: 0; }
-        .contact-item h5 { color: #666; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
-        .contact-item p { color: var(--metallic-gold); font-size: 1.4rem; font-weight: 700; }
+        /* Form */
+        #quote { background: #111; padding: 100px 10%; display: flex; gap: 80px; }
+        .quote-info { flex: 1; }
+        .quote-form-container { flex: 1.2; background: #1a1a1b; padding: 50px; border: 1px solid var(--border-gold); }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; color: var(--metallic-gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
+        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 15px; color: #fff; font-family: inherit; }
+        input:focus { border-color: var(--metallic-gold); outline: none; }
 
-        .cta-button { 
-            background-color: var(--metallic-gold); 
-            color: var(--primary-black); 
-            padding: 22px 60px; 
-            text-decoration: none; 
-            font-weight: 800; 
-            border-radius: 2px; 
-            display: inline-block; 
-            transition: var(--transition); 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            border: none;
-            cursor: pointer;
-        }
-        .cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4); background-color: var(--gold-hover); }
+        /* Finishing Icons */
+        .finishing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
+        .finish-card { background: #000; border: 1px solid #222; padding: 30px; transition: 0.3s; }
+        .finish-card:hover { border-color: var(--metallic-gold); }
+        .finish-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+        .finish-card h3 { color: var(--metallic-gold); font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; }
+        .finish-card p { font-size: 0.85rem; color: #666; line-height: 1.6; }
 
-        /* Footer */
-        footer { padding: 100px 5% 50px; background: #000; border-top: 1px solid var(--border-gold); }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; }
-        .footer-logo { font-size: 1.8rem; font-weight: 800; color: var(--metallic-gold); margin-bottom: 30px; display: block; letter-spacing: 3px; }
-        .footer-col h5 { color: var(--metallic-gold); font-size: 0.9rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
-        .footer-col ul { list-style: none; }
-        .footer-col li { margin-bottom: 18px; }
-        .footer-col a { color: #777; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .footer-col a:hover { color: var(--metallic-gold); }
-
-        .copyright { text-align: center; margin-top: 80px; color: #444; font-size: 0.85rem; border-top: 1px solid #111; padding-top: 40px; letter-spacing: 1px; }
-
-        @media (max-width: 1200px) {
-            .hero h1 { font-size: 3.5rem; }
-            .industry-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
-            .quote-grid { grid-template-columns: 1fr; gap: 60px; }
-        }
-        @media (max-width: 768px) {
-            .industry-grid, .process-grid, .footer-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.8rem; }
-            header nav { display: none; }
-            .wa-float { bottom: 20px; right: 20px; padding: 15px 20px; font-size: 0.9rem; }
+        footer { padding: 60px 10%; text-align: center; border-top: 1px solid #222; color: #444; }
+        @media (max-width: 1000px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .product-grid, .process-steps, #quote, .stats-grid, .finishing-grid { grid-template-columns: 1fr; }
+            #quote { flex-direction: column; }
+            .stats-grid { flex-direction: column; gap: 40px; }
         }
     </style>
 </head>
 <body>
-
-    <a href="https://wa.me/8618020755949" class="wa-float" target="_blank">
-        <span style="margin-right: 12px; font-size: 1.4rem;">💬</span>
-        <span>WhatsApp Support</span>
-    </a>
-
     <header>
         <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="custom-boxes.html">Custom Boxes</a>
-            <a href="box-labels.html">Box Labels</a>
-            <a href="#quote">Quote Lab</a>
+            <a href="index.html" style="color: var(--metallic-gold);">Home</a>
+            <a href="custom-boxes.html">Boxes</a>
+            <a href="box-labels.html">Labels</a>
+            <a href="blog.html">Story</a>
+            <a href="index.html#quote">Get Quote</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Industrial Precision. <br> Luxury Aesthetic.</h1>
-            <p>The global gold standard for custom packaging. Direct-to-factory manufacturing, elite design support, and 14-day global priority delivery.</p>
-            <div style="display: flex; gap: 25px; justify-content: center;">
-                <a href="#quote" class="cta-button">Get My Quote</a>
-                <a href="custom-boxes.html" class="cta-button" style="background: transparent; border: 1px solid var(--metallic-gold); color: var(--metallic-gold);">Explore Products</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-dark" id="products">
-        <div class="section-header">
-            <h2>Premium Product Solutions</h2>
-            <p>Direct manufacturing of high-end custom boxes and luxury branded labels.</p>
-        </div>
-        <div class="industry-grid">
-            <div class="industry-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-gold);">
-                <div style="height: 250px; background: url('https://sc02.alicdn.com/kf/Aed0b78bad1344296b0473b9c7a3863019.png') center/cover;"></div>
-                <div style="padding: 30px;">
-                    <h3 style="font-size: 1.1rem;">Custom Mailer Boxes</h3>
-                    <p style="font-size: 0.85rem; margin-bottom: 20px;">E-commerce ready, high-strength protection.</p>
-                    <a href="custom-boxes.html" class="cta-button" style="padding: 12px 25px; font-size: 0.75rem;">View Details</a>
-                </div>
-            </div>
-            <div class="industry-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-gold);">
-                <div style="height: 250px; background: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png') center/cover;"></div>
-                <div style="padding: 30px;">
-                    <h3 style="font-size: 1.1rem;">Rigid Luxury Boxes</h3>
-                    <p style="font-size: 0.85rem; margin-bottom: 20px;">Magnetic closure, premium unboxing.</p>
-                    <a href="custom-boxes.html" class="cta-button" style="padding: 12px 25px; font-size: 0.75rem;">View Details</a>
-                </div>
-            </div>
-            <div class="industry-card" style="padding: 0; overflow: hidden; border: 1px solid var(--border-gold);">
-                <div style="height: 250px; background: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png') center/cover;"></div>
-                <div style="padding: 30px;">
-                    <h3 style="font-size: 1.1rem;">Custom Branded Labels</h3>
-                    <p style="font-size: 0.85rem; margin-bottom: 20px;">Metallic foil, waterproof, security seals.</p>
-                    <a href="box-labels.html" class="cta-button" style="padding: 12px 25px; font-size: 0.75rem;">View Details</a>
+    <section class="hero-slider" id="home">
+        <!-- Slide 1: Premium Packaging - Luxury Box -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A2c26395bb67d46d0bd59dfcc28b760e11.png');"></div>
+            <div class="hero-content">
+                <h1>Beyond <span>Packaging</span></h1>
+                <p>High-end structural engineering meets luxury aesthetics. We create the physical embodiment of your brand's excellence.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#quote" class="cta-button">Consult an Expert</a>
+                    <a href="custom-boxes.html" class="cta-outline">View Catalog</a>
                 </div>
             </div>
         </div>
+        <!-- Slide 2: E-commerce Experience -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A9703a0e5213e4f2c86ad7a4ade4d7c2av.png');"></div>
+            <div class="hero-content">
+                <h1>Unforgettable <span>Unboxing</span></h1>
+                <p>Turning every delivery into a premium brand event. High-strength mailers designed for the digital-first era.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#quote" class="cta-button">Request Sample</a>
+                    <a href="custom-boxes.html" class="cta-outline">Custom Mailers</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3: Luxury Labels -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A5d4ba990a36d4b2189b7a83849e6cc6fc.png');"></div>
+            <div class="hero-content">
+                <h1>The Soul of <span>Luxury Branding</span></h1>
+                <p>Metallic foil stamping, Spot UV, and precision-cut labels. Our labels don't just stick—they tell the story of your premium product.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="#quote" class="cta-button">Get Label Quote</a>
+                    <a href="box-labels.html" class="cta-outline">Label Portfolio</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div style="position: absolute; bottom: 40px; left: 0; width: 100%; display: flex; justify-content: center; gap: 15px; z-index: 20;">
+            <div class="nav-dot active" onclick="currentSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s;"></div>
+            <div class="nav-dot" onclick="currentSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s;"></div>
+            <div class="nav-dot" onclick="currentSlide(2)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s;"></div>
+        </div>
     </section>
 
-    <section class="section">
-        <div class="section-header">
-            <h2>Tailored Industry Solutions</h2>
-            <p>Packaging is the silent ambassador of your brand. We've mastered the nuances of these core premium markets.</p>
-        </div>
-        <div class="industry-grid">
-            <div class="industry-card"><span class="icon">👕</span><h3>Fashion & Apparel</h3><p>Luxury mailers and reinforced boxes designed to mirror the elegance of premium garments.</p></div>
-            <div class="industry-card"><span class="icon">💄</span><h3>Health & Beauty</h3><p>Precision-engineered cosmetics packaging featuring Spot UV and soft-touch finishes for luxury appeal.</p></div>
-            <div class="industry-card"><span class="icon">💻</span><h3>Consumer Electronics</h3><p>High-protection reinforced structures with professional technical branding for premium tech products.</p></div>
-            <div class="industry-card"><span class="icon">🍷</span><h3>Food & Beverage</h3><p>Eco-safe, food-grade certified packaging solutions designed for premium wine, spirits, and gourmet goods.</p></div>
-            <div class="industry-card"><span class="icon">💎</span><h3>Jewelry & Gifts</h3><p>Bespoke magnetic rigid boxes and luxury label kits for high-value unboxing experiences.</p></div>
-            <div class="industry-card"><span class="icon">📦</span><h3>Global Logistics</h3><p>Bulk wholesale cartons and industrial-grade shipping labels for maximum global scale and efficiency.</p></div>
+    <section class="trusted-by">
+        <p>Providing Premium Solutions for Global Leaders</p>
+        <div class="brand-logos">
+            <span>SEPHORA</span>
+            <span>PANDORA</span>
+            <span>RITUALS</span>
+            <span>MAC</span>
+            <span>TIFFANY & CO.</span>
+            <span>L'ORÉAL</span>
+            <span>CHANEL</span>
+            <span>DIOR</span>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="products">
         <div class="section-header">
-            <h2>The GloryStar Advantage</h2>
-            <p>Why elite brands choose us over traditional reselling platforms. We are your direct manufacturing partner.</p>
+            <h2>The <span>GloryStar</span> Catalog</h2>
+            <p>A curated selection of industrial-grade luxury packaging, engineered for durability and designed for elegance.</p>
         </div>
-        <div class="advantage-container">
-            <table class="advantage-table">
-                <thead><tr><th>Feature</th><th>GloryStarPack (Factory Direct)</th><th>Typical Resellers</th></tr></thead>
-                <tbody>
-                    <tr><td>Production Pricing</td><td class="highlight">Factory-Direct (Save 45%)</td><td>Heavy Reseller Markups (+30% to +50%)</td></tr>
-                    <tr><td>Minimum Order (MOQ)</td><td class="highlight">1 Unit (Start Growing)</td><td>500 - 1,000 Unit Minimums</td></tr>
-                    <tr><td>Design & 3D Lab</td><td class="highlight">Free Professional Mockups</td><td>Paid Service or Static Templates</td></tr>
-                    <tr><td>Delivery Speed</td><td class="highlight">7-14 Day Global Express</td><td>30 - 45 Day Standard Shipping</td></tr>
-                    <tr><td>Quality Control</td><td class="highlight">Integrated 5-Point QC</td><td>Third-Party Outsourced Check</td></tr>
-                </tbody>
-            </table>
+        <div class="product-grid">
+            <div class="product-card">
+                <span class="product-badge">Best Seller</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A2c26395bb67d46d0bd59dfcc28b760e11.png');"></div>
+                <div class="product-info">
+                    <h3>Magnetic Rigid Box</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>100 pcs</span></li>
+                        <li>Lead Time <span>12-15 Days</span></li>
+                        <li>Material <span>1200gsm Board</span></li>
+                    </ul>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="product-badge" style="background: #fff;">Eco Friendly</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A9703a0e5213e4f2c86ad7a4ade4d7c2av.png');"></div>
+                <div class="product-info">
+                    <h3>Custom Mailer Box</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>200 pcs</span></li>
+                        <li>Lead Time <span>10-12 Days</span></li>
+                        <li>Material <span>FSC Corrugated</span></li>
+                    </ul>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="product-badge" style="background: #25d366; color: #fff;">New Tech</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A297187a536b84b80ae47ae15c9fe79471.png');"></div>
+                <div class="product-info">
+                    <h3>Premium Metallic Labels</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>500 pcs</span></li>
+                        <li>Lead Time <span>7-10 Days</span></li>
+                        <li>Finish <span>Gold Foil / Spot UV</span></li>
+                    </ul>
+                    <a href="box-labels.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
+            <!-- Added Products -->
+            <div class="product-card">
+                <span class="product-badge">Heavy Duty</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A6060e5a7e9ab4156b8b09054d155b774t.png');"></div>
+                <div class="product-info">
+                    <h3>Industrial Shipping Cartons</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>300 pcs</span></li>
+                        <li>Lead Time <span>12-14 Days</span></li>
+                        <li>Material <span>Double Wall Kraft</span></li>
+                    </ul>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="product-badge" style="background: #ff4757; color: #fff;">Luxury Boutique</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acd5734efb7c74ba2960542e35052588ao.png');"></div>
+                <div class="product-info">
+                    <h3>Designer Ribbon Bags</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>500 pcs</span></li>
+                        <li>Lead Time <span>10-15 Days</span></li>
+                        <li>Handle <span>Silk Ribbon / Cotton</span></li>
+                    </ul>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="product-badge">Smart Tech</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A8b4be94190a74b79a2d08ee99652d9642.png');"></div>
+                <div class="product-info">
+                    <h3>RFID Tracking Labels</h3>
+                    <ul class="product-specs">
+                        <li>MOQ <span>1000 pcs</span></li>
+                        <li>Lead Time <span>5-7 Days</span></li>
+                        <li>Finish <span>Integrated UHF Chip</span></li>
+                    </ul>
+                    <a href="box-labels.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="section section-dark">
         <div class="section-header">
-            <h2>The 6-Step Manufacturing Journey</h2>
-            <p>From creative concept to global doorstep. We've optimized the B2B packaging experience into six precise steps.</p>
+            <h2>The <span>GloryStar</span> Edge</h2>
+            <p>We don't just manufacture packaging; we engineer brand experiences. Discover why 5,000+ global brands trust our factory-direct expertise.</p>
         </div>
-        <div class="process-grid">
-            <div class="step"><span>01</span><h4>Consultation</h4><p>Define your dimensions, material weight, and luxury finishing with our B2B consultants.</p></div>
-            <div class="step"><span>02</span><h4>3D Modeling</h4><p>Visualize your brand in a high-fidelity 3D digital environment before mass production.</p></div>
-            <div class="step"><span>03</span><h4>Prototyping</h4><p>Digital proofing and physical sampling to ensure 100% pixel-perfect accuracy.</p></div>
-            <div class="step"><span>04</span><h4>Manufacturing</h4><p>High-definition printing and bespoke finishes applied in our advanced factory facilities.</p></div>
-            <div class="step"><span>05</span><h4>QC Laboratory</h4><p>Rigorous 5-point inspection for color accuracy, structural integrity, and finish durability.</p></div>
-            <div class="step"><span>06</span><h4>Global Dispatch</h4><p>Tracked international shipping at wholesale rates, delivered worldwide in 14 days.</p></div>
+        <div class="finishing-grid">
+            <div class="finish-card">
+                <span class="finish-icon">🏭</span>
+                <h3>Factory Direct</h3>
+                <p>Save up to 45% by cutting out intermediaries. We own the production lines, ensuring price leadership and quality control.</p>
+            </div>
+            <div class="finish-card">
+                <span class="finish-icon">📐</span>
+                <h3>Free 3D Modeling</h3>
+                <p>Our structural engineers create high-fidelity 3D dieline mockups and digital proofs for free with every inquiry.</p>
+            </div>
+            <div class="finish-card">
+                <span class="finish-icon">📦</span>
+                <h3>Low MOQ Policy</h3>
+                <p>Supporting brands of all scales. Custom luxury packaging starting from just 100 units—perfect for product launches.</p>
+            </div>
+            <div class="finish-card">
+                <span class="finish-icon">🌱</span>
+                <h3>Eco-Luxury Materials</h3>
+                <p>100% FSC-certified papers, soy-based biodegradable inks, and recyclable finishes for a sustainable high-end look.</p>
+            </div>
+            <div class="finish-card">
+                <span class="finish-icon">🌍</span>
+                <h3>Global B2B Logistics</h3>
+                <p>DDP door-to-door shipping worldwide. 14-day priority production for time-sensitive global launches.</p>
+            </div>
+            <div class="finish-card">
+                <span class="finish-icon">🔬</span>
+                <h3>Quality Lab Testing</h3>
+                <p>All boxes undergo rigorous burst tests, edge crush tests, and moisture resistance checks in our internal lab.</p>
+            </div>
         </div>
     </section>
 
+    <section class="section" id="process">
+        <div class="section-header">
+            <h2>The <span>Four-Step</span> Global Partnership</h2>
+            <p>From initial design to global fulfillment, we handle every detail of your packaging supply chain.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step">
+                <span class="step-badge">01</span>
+                <h3>Consultation & Analysis</h3>
+                <p>We analyze your product's weight, fragile points, and retail environment to recommend the optimal board weight and structural style.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-badge">02</span>
+                <h3>Dieline & Prototyping</h3>
+                <p>Free 3D digital mockups followed by a physical pre-production sample to ensure fit and finish before mass production.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-badge">03</span>
+                <h3>Precision Manufacturing</h3>
+                <p>Heidelberg offset printing and automated rigid box assembly lines ensure consistency and durability for bulk B2B orders.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-badge">04</span>
+                <h3>Global B2B Logistics</h3>
+                <p>Strategic warehouse fulfillment and DDP shipping to the US, Europe, and UAE in 10-14 business days.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">Years of Mastery</span></div>
+        <div class="stat-item"><span class="stat-num">24h</span><span class="stat-label">Response Time</span></div>
+        <div class="stat-item"><span class="stat-num">5M+</span><span class="stat-label">Monthly Units</span></div>
+        <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Visual Verification</span></div>
+    </section>
+
     <section id="quote">
-        <div class="quote-grid">
-            <div class="quote-info">
-                <h2>Achieve Packaging Perfection</h2>
-                <p>Ready to level up your brand's physical presence? Join over 5,000 brands that trust GloryStarPack for their manufacturing needs.</p>
-                <div class="contact-card">
-                    <div class="contact-item"><h5>DIRECT EMAIL</h5><p>kevin@GloryStarPack.com</p></div>
-                    <div class="contact-item"><h5>WHATSAPP / PHONE</h5><p>+86 18020755949</p></div>
-                    <div class="contact-item"><h5>RESPONSE TIME</h5><p>Within 2 Hours (Global B2B Support)</p></div>
+        <div class="quote-info">
+            <h2 style="color: var(--metallic-gold); font-size: 3rem; text-transform: uppercase; margin-bottom: 30px;">Request a <br>Global Quote</h2>
+            <p style="color: #888; margin-bottom: 40px;">Partner with GloryStarPack for factory-direct luxury packaging solutions. Our engineers respond within 24 hours.</p>
+            <div style="background: #1a1a1b; padding: 30px; border-left: 4px solid var(--metallic-gold);">
+                <p style="color: #fff; font-weight: 700; margin-bottom: 10px;">Direct Support:</p>
+                <p style="color: var(--metallic-gold);">WhatsApp: +86 18020755949</p>
+                <p style="color: var(--metallic-gold);">Email: kevin@GloryStarPack.com</p>
+            </div>
+        </div>
+        <div class="quote-form-container">
+            <form action="#">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Your Name">
                 </div>
-            </div>
-            <div style="background: #111; padding: 60px; border: 1px solid var(--border-gold); border-radius: 4px;">
-                <form>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px;">
-                        <div style="text-align: left;"><label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">NAME</label><input type="text" placeholder="John Doe" style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff;"></div>
-                        <div style="text-align: left;"><label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">COMPANY</label><input type="text" placeholder="Brand Inc." style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff;"></div>
-                    </div>
-                    <div style="text-align: left; margin-bottom: 25px;">
-                        <label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">CATEGORY</label>
-                        <select style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff; font-family:inherit;">
-                            <option>Custom Mailer Boxes</option>
-                            <option>Rigid Luxury Boxes</option>
-                            <option>Wholesale Box Labels</option>
-                            <option>Full Packaging Suite</option>
-                        </select>
-                    </div>
-                    <div style="text-align: left; margin-bottom: 40px;">
-                        <label style="font-size: 0.75rem; color: var(--metallic-gold); font-weight: 700; display: block; margin-bottom: 10px;">SPECIFICATIONS</label>
-                        <textarea rows="4" placeholder="Dimensions, Material, Quantity..." style="width:100%; padding:15px; background:#000; border:1px solid #444; color:#fff; font-family:inherit;"></textarea>
-                    </div>
-                    <button type="submit" class="cta-button" style="width: 100%;">REQUEST PROFESSIONAL QUOTE</button>
-                </form>
-            </div>
+                <div class="form-group">
+                    <label>Business Email</label>
+                    <input type="email" placeholder="email@company.com">
+                </div>
+                <div class="form-group">
+                    <label>Product Type</label>
+                    <select>
+                        <option>Luxury Rigid Box</option>
+                        <option>Mailer Box</option>
+                        <option>Shipping Carton</option>
+                        <option>Custom Label</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Estimated Quantity</label>
+                    <input type="number" placeholder="Min. 100pcs">
+                </div>
+                <div class="form-group">
+                    <label>Project Details</label>
+                    <textarea rows="4" placeholder="Dimensions, material preferences, etc."></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
+            </form>
         </div>
     </section>
 
     <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <span class="footer-logo">GLORYSTARPACK</span>
-                <p style="color: #666; font-size: 0.85rem; line-height: 1.8;">The premier global destination for luxury industrial packaging. We empower brands with factory-direct precision and elite design capabilities. Member of the GloryStar Group.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Product Solutions</h5>
-                <ul>
-                    <li><a href="custom-boxes.html">Mailer Boxes</a></li>
-                    <li><a href="custom-boxes.html">Rigid Luxury Boxes</a></li>
-                    <li><a href="box-labels.html">Custom Labels</a></li>
-                    <li><a href="#">Eco-Sustainable Range</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>The Brand</h5>
-                <ul>
-                    <li><a href="#">About GloryStar</a></li>
-                    <li><a href="#">Our Process</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Global Priority</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Support</h5>
-                <ul>
-                    <li><a href="https://wa.me/8618020755949">WhatsApp Chat</a></li>
-                    <li><a href="#quote">Quote Lab</a></li>
-                    <li><a href="#">Design Guide</a></li>
-                    <li><a href="#">Tracking</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            &copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group ecosystem.
-        </div>
+        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
     </footer>
 
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll(".slide");
+        let dots = document.querySelectorAll(".nav-dot");
+        let slideTimeout;
+
+        function showSlides() {
+            slides.forEach(s => s.classList.remove("active"));
+            dots.forEach(d => d.classList.remove("active"));
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+            
+            slideTimeout = setTimeout(showSlides, 35000); // 35 seconds
+        }
+
+        function currentSlide(n) {
+            clearTimeout(slideTimeout);
+            slideIndex = n;
+            slides.forEach(s => s.classList.remove("active"));
+            dots.forEach(d => d.classList.remove("active"));
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+            slideTimeout = setTimeout(showSlides, 35000);
+        }
+
+        showSlides();
+    </script>
 </body>
 </html>
