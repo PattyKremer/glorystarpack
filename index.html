@@ -24,6 +24,8 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; overflow-x: hidden; }
 
+        ::selection { background: var(--metallic-gold); color: #000; }
+
         /* Navigation */
         header { 
             padding: 20px 5%; 
@@ -35,9 +37,12 @@
             width: 100%;
             top: 0; 
             background: rgba(10, 10, 11, 0.95); 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             z-index: 1000; 
+            transition: 0.4s;
         }
+        header.scrolled { padding: 15px 5%; background: rgba(0, 0, 0, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
         .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
         .logo span { color: var(--text-white); font-weight: 300; }
         nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
@@ -85,122 +90,224 @@
         .hero-content { position: relative; z-index: 10; max-width: 900px; padding: 0 20px; }
         .hero-content h1 { font-size: 4.5rem; color: var(--text-white); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 8px; }
         .hero-content h1 span { color: var(--metallic-gold); font-weight: 800; }
-        .hero-content p { font-size: 1.1rem; color: #ddd; margin-bottom: 40px; letter-spacing: 2px; line-height: 1.8; }
+        .hero-content p { font-size: 1.1rem; color: #ddd; margin-bottom: 30px; letter-spacing: 2px; line-height: 1.8; }
         
-        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
+        .hero-ribbon { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
+        .ribbon-item { color: #fff; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
+        .ribbon-item span { color: var(--metallic-gold); display: block; font-size: 0.7rem; font-weight: 800; margin-bottom: 5px; }
+
+        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; border: none; }
         .cta-outline { border: 1px solid var(--metallic-gold); color: var(--metallic-gold); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
         .cta-button:hover, .cta-outline:hover { transform: scale(1.05); background-color: #f1c40f; color: #000; border-color: #f1c40f; }
 
         /* Trusted By */
-        .trusted-by { padding: 40px 5%; background: #000; text-align: center; border-bottom: 1px solid var(--border-gold); }
+        .trusted-by { padding: 50px 5%; background: #000; text-align: center; border-bottom: 1px solid var(--border-gold); }
         .trusted-by p { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: #666; margin-bottom: 30px; }
         .brand-logos { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; opacity: 0.6; filter: grayscale(1); }
         .brand-logos span { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: 2px; }
 
         /* Sections */
-        .section { padding: 100px 10%; position: relative; }
+        .section { padding: 120px 10%; position: relative; }
         .section-dark { background-color: #111; }
         .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.8rem; color: var(--text-white); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
+        .section-header h2 { font-size: 2.8rem; color: var(--text-white); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 4px; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-header h2 span { color: var(--metallic-gold); }
-        .section-header p { color: #888; max-width: 700px; margin: 0 auto; line-height: 1.8; }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: var(--metallic-gold); }
+        .section-header p { color: var(--text-grey); max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem; }
 
         /* Product Grid */
         .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .product-card { background: #1a1a1b; border: 1px solid #333; transition: 0.4s; position: relative; overflow: hidden; }
-        .product-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
-        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
-        .product-info { padding: 30px; text-align: center; }
-        .product-info h3 { color: var(--metallic-gold); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; }
-        .product-badge { position: absolute; top: 20px; right: 20px; background: var(--metallic-gold); color: #000; font-size: 0.7rem; font-weight: 700; padding: 5px 12px; text-transform: uppercase; z-index: 5; }
+        .product-card { background: #1a1a1b; border: 1px solid #333; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); position: relative; overflow: hidden; border-radius: 4px; }
+        .product-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); transition: 0.5s; }
+        .product-card:hover .product-img { transform: scale(1.05); }
+        .product-info { padding: 35px; text-align: center; }
+        .product-info h3 { color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; font-weight: 800; }
+        .product-badge { position: absolute; top: 20px; right: 20px; background: var(--metallic-gold); color: #000; font-size: 0.7rem; font-weight: 800; padding: 6px 15px; text-transform: uppercase; z-index: 5; letter-spacing: 1px; }
         .product-specs { list-style: none; padding: 0; margin-bottom: 25px; font-size: 0.85rem; color: #888; }
-        .product-specs li { margin-bottom: 8px; display: flex; justify-content: space-between; border-bottom: 1px dotted #444; padding-bottom: 5px; }
-        .product-specs span { color: #fff; font-weight: 500; }
+        .product-specs li { margin-bottom: 10px; display: flex; justify-content: space-between; border-bottom: 1px dotted #444; padding-bottom: 6px; }
+        .product-specs span { color: #fff; font-weight: 600; }
 
-        /* Process Steps */
-        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
-        .process-step { position: relative; padding: 40px; background: #000; border: 1px solid #222; }
-        .step-badge { position: absolute; top: -15px; left: 40px; background: var(--metallic-gold); color: #000; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: 800; border-radius: 50%; }
-        .process-step h3 { color: var(--metallic-gold); margin-top: 10px; margin-bottom: 15px; font-size: 1.1rem; text-transform: uppercase; }
-        .process-step p { font-size: 0.85rem; color: #777; line-height: 1.6; }
+        /* Pricing Section */
+        .pricing-section { padding: 120px 10%; background: #000; text-align: center; border-bottom: 1px solid #111; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+        .pricing-card { background: #111; border: 1px solid #222; padding: 60px 40px; transition: 0.4s; border-radius: 4px; position: relative; }
+        .pricing-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
+        .pricing-card.featured { border-color: var(--metallic-gold); background: #161618; }
+        .price-tag { font-size: 3.5rem; color: var(--metallic-gold); font-weight: 800; display: block; margin: 30px 0; }
+        .price-tag span { font-size: 1.2rem; color: #666; font-weight: 400; text-transform: lowercase; }
+        .pricing-card h4 { text-transform: uppercase; letter-spacing: 3px; color: #fff; margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
 
-        /* Stats Grid */
-        .stats-grid { display: flex; justify-content: space-around; padding: 80px 10%; background: #000; border-top: 1px solid var(--border-gold); }
+        /* Finishing Options Detailed */
+        .finishing-detailed { padding: 120px 10%; background: #0a0a0b; }
+        .finish-row { display: flex; gap: 80px; align-items: center; margin-bottom: 100px; }
+        .finish-row:nth-child(even) { flex-direction: row-reverse; }
+        .finish-info { flex: 1; }
+        .finish-img-placeholder { flex: 1.2; height: 450px; background: #111; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; background-size: cover; background-position: center; box-shadow: 0 30px 60px rgba(0,0,0,0.5); }
+        .finish-info h3 { color: #fff; font-size: 2.2rem; text-transform: uppercase; margin-bottom: 25px; font-weight: 800; letter-spacing: 2px; }
+        .finish-info p { color: #888; line-height: 1.8; margin-bottom: 35px; font-size: 1.1rem; }
+        .finish-tag { display: inline-block; padding: 6px 18px; background: rgba(212, 175, 55, 0.1); color: var(--metallic-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; border: 1px solid var(--border-gold); margin-bottom: 20px; letter-spacing: 2px; }
+
+        /* How It Works */
+        .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 60px; }
+        .process-item { text-align: center; position: relative; }
+        .process-item::after { content: '→'; position: absolute; top: 30px; right: -25px; font-size: 1.5rem; color: #333; }
+        .process-item:last-child::after { content: ''; }
+        .process-icon { width: 80px; height: 80px; background: #111; border: 1px solid var(--border-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 1.5rem; color: var(--metallic-gold); font-weight: 800; }
+        .process-item h4 { color: #fff; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; font-size: 1rem; }
+        .process-item p { color: #666; font-size: 0.85rem; line-height: 1.6; }
+
+        /* Stats Bar */
+        .stats-grid { display: flex; justify-content: space-around; padding: 100px 10%; background: #000; border-top: 1px solid var(--border-gold); }
         .stat-item { text-align: center; }
-        .stat-num { font-size: 3rem; font-weight: 800; color: var(--metallic-gold); display: block; }
-        .stat-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #666; }
+        .stat-num { font-size: 3.5rem; font-weight: 800; color: var(--metallic-gold); display: block; margin-bottom: 10px; }
+        .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: #666; font-weight: 600; }
 
-        /* Form */
-        #quote { background: #111; padding: 100px 10%; display: flex; gap: 80px; }
-        .quote-info { flex: 1; }
-        .quote-form-container { flex: 1.2; background: #1a1a1b; padding: 50px; border: 1px solid var(--border-gold); }
-        .form-group { margin-bottom: 25px; }
-        label { display: block; color: var(--metallic-gold); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 10px; font-weight: 700; }
-        input, select, textarea { width: 100%; background: #000; border: 1px solid #333; padding: 15px; color: #fff; font-family: inherit; }
-        input:focus { border-color: var(--metallic-gold); outline: none; }
+        /* Certifications Bar */
+        .certs-bar { padding: 50px 10%; background: #050505; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; border-top: 1px solid #111; }
+        .cert-item { font-size: 0.75rem; color: #555; font-weight: 700; border: 1px solid #222; padding: 8px 20px; letter-spacing: 2px; text-transform: uppercase; transition: 0.3s; }
+        .cert-item:hover { color: var(--metallic-gold); border-color: var(--metallic-gold); }
 
-        /* Finishing Icons */
-        .finishing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
-        .finish-card { background: #000; border: 1px solid #222; padding: 30px; transition: 0.3s; }
-        .finish-card:hover { border-color: var(--metallic-gold); }
-        .finish-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
-        .finish-card h3 { color: var(--metallic-gold); font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; }
-        .finish-card p { font-size: 0.85rem; color: #666; line-height: 1.6; }
+        /* Reviews */
+        .reviews-section { padding: 120px 10%; background: #000; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 70px; }
+        .review-card { background: #0a0a0b; padding: 60px 40px; border: 1px solid #1a1a1b; border-radius: 4px; transition: 0.3s; }
+        .review-card:hover { border-color: var(--border-gold); background: #111; }
+        .stars { color: var(--metallic-gold); margin-bottom: 25px; font-size: 1.4rem; letter-spacing: 3px; }
+        .review-text { font-style: italic; color: #bbb; margin-bottom: 35px; line-height: 2; font-size: 1.05rem; }
+        .reviewer { color: #fff; font-weight: 800; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+        .reviewer span { color: var(--text-grey); display: block; font-weight: 400; margin-top: 10px; font-size: 0.75rem; letter-spacing: 1px; }
 
-        /* Floating Contact Buttons */
-        .floating-contact {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* FAQ */
+        .faq-section { padding: 120px 10%; background: #0a0a0b; }
+        .faq-container { max-width: 900px; margin: 60px auto 0; text-align: left; }
+        .faq-item { border-bottom: 1px solid #1a1a1b; padding: 30px 0; transition: 0.3s; cursor: pointer; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; color: #fff; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 1rem; }
+        .faq-question span { font-size: 1.5rem; color: var(--metallic-gold); transition: 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); color: #777; font-size: 1rem; line-height: 1.8; padding-right: 40px; }
+        .faq-item.active .faq-answer { max-height: 500px; transition: max-height 0.5s ease-in; padding-top: 25px; }
+        .faq-item.active .faq-question { color: var(--metallic-gold); }
+        .faq-item.active .faq-question span { transform: rotate(45deg); }
+
+        /* Blog Preview */
+        .blog-preview { padding: 120px 10%; background: #050505; }
+        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+        .blog-card { background: #111; border: 1px solid #222; border-radius: 4px; overflow: hidden; transition: 0.4s; }
+        .blog-card:hover { border-color: var(--metallic-gold); transform: translateY(-5px); }
+        .blog-img { height: 240px; background: #222; background-size: cover; background-position: center; transition: 0.5s; }
+        .blog-card:hover .blog-img { transform: scale(1.05); }
+        .blog-content { padding: 40px; }
+        .blog-content h4 { color: #fff; margin-bottom: 20px; font-size: 1.25rem; line-height: 1.5; font-weight: 700; }
+        .blog-link { color: var(--metallic-gold); text-decoration: none; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 10px; }
+        .blog-link::after { content: '→'; transition: 0.3s; }
+        .blog-link:hover::after { transform: translateX(5px); }
+
+        /* --- Luxopack Style Inquiry Form --- */
+        .quote-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            display: grid; 
+            grid-template-columns: 1fr 1.5fr; 
+            gap: 60px; 
+            align-items: start;
         }
-        .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: #fff;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.3s;
+        .quote-sidebar { 
+            position: sticky; 
+            top: 120px;
+        }
+        .quote-sidebar h2 { 
+            font-size: 3rem; 
+            text-transform: uppercase; 
+            line-height: 1.1; 
+            margin-bottom: 30px; 
+            color: var(--metallic-gold); 
+        }
+        .quote-sidebar p { color: #888; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; }
+        
+        .trust-pills { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .trust-pill { background: #1a1a1b; border: 1px solid #333; padding: 10px 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #fff; border-radius: 50px; }
+
+        .form-card { 
+            background: #111; 
+            border: 1px solid var(--border-gold); 
+            padding: 60px; 
+            border-radius: 8px; 
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
             position: relative;
         }
+        
+        /* Multi-step Logic */
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .step-indicator { display: flex; gap: 10px; margin-bottom: 40px; }
+        .step-dot { flex: 1; height: 4px; background: #333; border-radius: 2px; transition: 0.3s; }
+        .step-dot.active { background: var(--metallic-gold); box-shadow: 0 0 10px var(--metallic-gold); }
+
+        .visual-selector { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 15px; 
+            margin-bottom: 30px; 
+        }
+        .visual-option { 
+            background: #000; 
+            border: 1px solid #222; 
+            padding: 20px; 
+            text-align: center; 
+            cursor: pointer; 
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+        .visual-option:hover { border-color: var(--metallic-gold); transform: translateY(-3px); }
+        .visual-option.selected { border-color: var(--metallic-gold); background: rgba(212, 175, 55, 0.05); }
+        .visual-option svg { margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+        .visual-option span { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #fff; letter-spacing: 1px; }
+
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .form-group label { display: block; color: var(--metallic-gold); font-size: 0.7rem; text-transform: uppercase; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px; }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; background: #000; border: 1px solid #333; padding: 18px; color: #fff; font-size: 0.95rem; border-radius: 4px; transition: 0.3s; 
+        }
+        .form-group input:focus { border-color: var(--metallic-gold); outline: none; }
+
+        .btn-nav { display: flex; justify-content: space-between; margin-top: 40px; gap: 20px; }
+        .btn-back { background: transparent; border: 1px solid #444; color: #888; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: 700; font-size: 0.8rem; border-radius: 4px; }
+        .btn-next { background: var(--metallic-gold); border: none; color: #000; padding: 15px 40px; cursor: pointer; text-transform: uppercase; font-weight: 800; font-size: 0.85rem; border-radius: 4px; flex: 1; }
+
+        /* Floating Contact & Back to Top */
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.4); transition: 0.3s; position: relative; }
         .float-whatsapp { background-color: #25d366; }
         .float-email { background-color: var(--metallic-gold); }
-        .float-btn:hover { transform: scale(1.1); }
-        .float-btn span {
-            position: absolute;
-            right: 75px;
-            background: #fff;
-            color: #000;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            white-space: nowrap;
-            border-radius: 5px;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.3s;
-        }
+        .float-btn:hover { transform: scale(1.1) translateY(-5px); }
+        .float-btn span { position: absolute; right: 75px; background: #fff; color: #000; padding: 8px 18px; font-size: 0.85rem; font-weight: 800; white-space: nowrap; border-radius: 4px; opacity: 0; pointer-events: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .float-btn:hover span { opacity: 1; }
+        
+        .back-to-top { width: 60px; height: 60px; background: #fff; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; transition: 0.4s; opacity: 0; visibility: hidden; font-weight: 800; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--metallic-gold); color: #000; transform: translateY(-5px); }
 
-        footer { padding: 60px 10%; text-align: center; border-top: 1px solid #222; color: #444; }
-        @media (max-width: 1000px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .product-grid, .process-steps, #quote, .stats-grid, .finishing-grid { grid-template-columns: 1fr; }
-            #quote { flex-direction: column; }
-            .stats-grid { flex-direction: column; gap: 40px; }
+        footer { padding: 80px 10%; text-align: center; border-top: 1px solid #111; color: #555; background: #000; font-size: 0.9rem; letter-spacing: 1px; }
+
+        @media (max-width: 992px) {
+            .quote-container { grid-template-columns: 1fr; gap: 40px; }
+            .quote-sidebar { position: static; text-align: center; }
+            .visual-selector { grid-template-columns: repeat(2, 1fr); }
+            .hero-content h1 { font-size: 2.8rem; letter-spacing: 4px; }
+            .product-grid, .pricing-grid, .reviews-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .product-grid, .pricing-grid, .reviews-grid, .blog-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .stats-grid { flex-direction: column; gap: 50px; }
+            header nav { display: none; }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
         <nav>
             <a href="index.html" style="color: var(--metallic-gold);">Home</a>
@@ -212,21 +319,24 @@
     </header>
 
     <section class="hero-slider" id="home">
-        <!-- Slide 1: Premium Packaging - Luxury Box -->
         <div class="slide active">
-            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A2c26395bb67d46d0bd59dfcc28b760e11.png');"></div>
+            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/Ae2cadf7817fe493a88ff7461c2bd0f27Z.png');"></div>
             <div class="hero-content">
                 <h1>Beyond <span>Packaging</span></h1>
                 <p>High-end structural engineering meets luxury aesthetics. We create the physical embodiment of your brand's excellence.</p>
+                <div class="hero-ribbon">
+                    <div class="ribbon-item"><span>MOQ</span> 100pcs</div>
+                    <div class="ribbon-item"><span>Lead Time</span> 15 Days</div>
+                    <div class="ribbon-item"><span>Service</span> Free Design</div>
+                </div>
                 <div style="display: flex; gap: 20px; justify-content: center;">
                     <a href="#quote" class="cta-button">Consult an Expert</a>
                     <a href="custom-boxes.html" class="cta-outline">View Catalog</a>
                 </div>
             </div>
         </div>
-        <!-- Slide 2: E-commerce Experience -->
         <div class="slide">
-            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A9703a0e5213e4f2c86ad7a4ade4d7c2av.png');"></div>
+            <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A21a5808a9fc64362855ec6c8f200be2bH.png');"></div>
             <div class="hero-content">
                 <h1>Unforgettable <span>Unboxing</span></h1>
                 <p>Turning every delivery into a premium brand event. High-strength mailers designed for the digital-first era.</p>
@@ -236,7 +346,6 @@
                 </div>
             </div>
         </div>
-        <!-- Slide 3: Luxury Labels -->
         <div class="slide">
             <div class="slide-bg" style="background-image: url('https://sc02.alicdn.com/kf/A5d4ba990a36d4b2189b7a83849e6cc6fc.png');"></div>
             <div class="hero-content">
@@ -248,8 +357,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Slider Navigation -->
         <div style="position: absolute; bottom: 40px; left: 0; width: 100%; display: flex; justify-content: center; gap: 15px; z-index: 20;">
             <div class="nav-dot active" onclick="currentSlide(0)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s;"></div>
             <div class="nav-dot" onclick="currentSlide(1)" style="width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: 0.3s;"></div>
@@ -260,14 +367,7 @@
     <section class="trusted-by">
         <p>Providing Premium Solutions for Global Leaders</p>
         <div class="brand-logos">
-            <span>SEPHORA</span>
-            <span>PANDORA</span>
-            <span>RITUALS</span>
-            <span>MAC</span>
-            <span>TIFFANY & CO.</span>
-            <span>L'ORÉAL</span>
-            <span>CHANEL</span>
-            <span>DIOR</span>
+            <span>SEPHORA</span><span>PANDORA</span><span>RITUALS</span><span>MAC</span><span>TIFFANY & CO.</span><span>L'ORÉAL</span><span>CHANEL</span><span>DIOR</span>
         </div>
     </section>
 
@@ -287,7 +387,7 @@
                         <li>Lead Time <span>12-15 Days</span></li>
                         <li>Material <span>1200gsm Board</span></li>
                     </ul>
-                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 12px 20px; font-size: 0.75rem; width: 100%; display: block; text-align: center;">View Specs</a>
                 </div>
             </div>
             <div class="product-card">
@@ -300,129 +400,147 @@
                         <li>Lead Time <span>10-12 Days</span></li>
                         <li>Material <span>FSC Corrugated</span></li>
                     </ul>
-                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                    <a href="custom-boxes.html" class="cta-outline" style="padding: 12px 20px; font-size: 0.75rem; width: 100%; display: block; text-align: center;">View Specs</a>
                 </div>
             </div>
             <div class="product-card">
-                <span class="product-badge" style="background: #25d366; color: #fff;">New Tech</span>
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A297187a536b84b80ae47ae15c9fe79471.png');"></div>
+                <span class="product-badge" style="background: #D4AF37; color: #000;">Elite Finish</span>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A6a018b8bed94431f9c8a487760b309ddw.png');"></div>
                 <div class="product-info">
-                    <h3>Premium Metallic Labels</h3>
+                    <h3>Metallic Labels</h3>
                     <ul class="product-specs">
                         <li>MOQ <span>500 pcs</span></li>
                         <li>Lead Time <span>7-10 Days</span></li>
-                        <li>Finish <span>Gold Foil / Spot UV</span></li>
+                        <li>Finish <span>Hot Foil / Emboss</span></li>
                     </ul>
-                    <a href="box-labels.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
-                </div>
-            </div>
-            <!-- Added Products -->
-            <div class="product-card">
-                <span class="product-badge">Heavy Duty</span>
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A6060e5a7e9ab4156b8b09054d155b774t.png');"></div>
-                <div class="product-info">
-                    <h3>Industrial Shipping Cartons</h3>
-                    <ul class="product-specs">
-                        <li>MOQ <span>300 pcs</span></li>
-                        <li>Lead Time <span>12-14 Days</span></li>
-                        <li>Material <span>Double Wall Kraft</span></li>
-                    </ul>
-                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <span class="product-badge" style="background: #ff4757; color: #fff;">Luxury Boutique</span>
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Acd5734efb7c74ba2960542e35052588ao.png');"></div>
-                <div class="product-info">
-                    <h3>Designer Ribbon Bags</h3>
-                    <ul class="product-specs">
-                        <li>MOQ <span>500 pcs</span></li>
-                        <li>Lead Time <span>10-15 Days</span></li>
-                        <li>Handle <span>Silk Ribbon / Cotton</span></li>
-                    </ul>
-                    <a href="custom-boxes.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <span class="product-badge">Smart Tech</span>
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A8b4be94190a74b79a2d08ee99652d9642.png');"></div>
-                <div class="product-info">
-                    <h3>RFID Tracking Labels</h3>
-                    <ul class="product-specs">
-                        <li>MOQ <span>1000 pcs</span></li>
-                        <li>Lead Time <span>5-7 Days</span></li>
-                        <li>Finish <span>Integrated UHF Chip</span></li>
-                    </ul>
-                    <a href="box-labels.html" class="cta-outline" style="padding: 10px 20px; font-size: 0.7rem; width: 100%; display: block; text-align: center;">Explore Specifications</a>
+                    <a href="box-labels.html" class="cta-outline" style="padding: 12px 20px; font-size: 0.75rem; width: 100%; display: block; text-align: center;">View Specs</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-dark">
+    <section class="section section-dark" id="advantage">
         <div class="section-header">
-            <h2>The <span>GloryStar</span> Edge</h2>
-            <p>We don't just manufacture packaging; we engineer brand experiences. Discover why 5,000+ global brands trust our factory-direct expertise.</p>
+            <h2>The <span>GloryStar</span> Advantage</h2>
+            <p>From structural engineering to global logistics. Our factory-direct model eliminates middlemen, delivering luxury quality at scale.</p>
         </div>
-        <div class="finishing-grid">
-            <div class="finish-card">
-                <span class="finish-icon">🏭</span>
-                <h3>Factory Direct</h3>
-                <p>Save up to 45% by cutting out intermediaries. We own the production lines, ensuring price leadership and quality control.</p>
+        
+        <!-- Process Row -->
+        <div class="process-grid" style="margin-bottom: 100px;">
+            <div class="process-item">
+                <div class="process-icon">01</div>
+                <h4 style="text-transform: uppercase; letter-spacing: 2px;">Define Brief</h4>
+                <p>Submit your specs and logo. Our specialists review your needs within 24 hours.</p>
             </div>
-            <div class="finish-card">
-                <span class="finish-icon">📐</span>
-                <h3>Free 3D Modeling</h3>
-                <p>Our structural engineers create high-fidelity 3D dieline mockups and digital proofs for free with every inquiry.</p>
+            <div class="process-item">
+                <div class="process-icon">02</div>
+                <h4 style="text-transform: uppercase; letter-spacing: 2px;">Free Design</h4>
+                <p>Receive custom 3D dielines and visual mockups. We refine until it's perfect.</p>
             </div>
-            <div class="finish-card">
-                <span class="finish-icon">📦</span>
-                <h3>Low MOQ Policy</h3>
-                <p>Supporting brands of all scales. Custom luxury packaging starting from just 100 units—perfect for product launches.</p>
+            <div class="process-item">
+                <div class="process-icon">03</div>
+                <h4 style="text-transform: uppercase; letter-spacing: 2px;">Pre-Pro Sample</h4>
+                <p>Get a physical prototype. Sample cost is fully refundable upon bulk order.</p>
             </div>
-            <div class="finish-card">
-                <span class="finish-icon">🌱</span>
-                <h3>Eco-Luxury Materials</h3>
-                <p>100% FSC-certified papers, soy-based biodegradable inks, and recyclable finishes for a sustainable high-end look.</p>
+            <div class="process-item">
+                <div class="process-icon">04</div>
+                <h4 style="text-transform: uppercase; letter-spacing: 2px;">Mass Production</h4>
+                <p>Global fulfillment with a 15-day standard lead time for most luxury boxes.</p>
             </div>
-            <div class="finish-card">
-                <span class="finish-icon">🌍</span>
-                <h3>Global B2B Logistics</h3>
-                <p>DDP door-to-door shipping worldwide. 14-day priority production for time-sensitive global launches.</p>
+        </div>
+
+        <!-- Factory Direct Row (New) -->
+        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px;">
+            <div style="position: relative;">
+                <div style="width: 100%; height: 500px; background-image: url('https://sc02.alicdn.com/kf/Aaf19b26446c14793beb71bf3549f094du.png'); background-size: cover; background-position: center; border-radius: 12px; border: 1px solid #333;"></div>
+                <div style="position: absolute; bottom: 30px; left: 30px; background: rgba(0,0,0,0.8); border: 1px solid var(--border-gold); padding: 15px 25px; border-radius: 4px; backdrop-filter: blur(5px);">
+                    <span style="color: var(--metallic-gold); font-weight: 800; font-size: 1.2rem; display: block;">30,000</span>
+                    <span style="color: #fff; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px;">SQM Factory Floor</span>
+                </div>
             </div>
-            <div class="finish-card">
-                <span class="finish-icon">🔬</span>
-                <h3>Quality Lab Testing</h3>
-                <p>All boxes undergo rigorous burst tests, edge crush tests, and moisture resistance checks in our internal lab.</p>
+            <div>
+                <span style="color: var(--metallic-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Why GloryStarPack</span>
+                <h2 style="color: #fff; font-size: 2.5rem; margin: 15px 0; line-height: 1.1;">Factory Direct.<br><span style="color: var(--metallic-gold); font-style: italic;">Zero Middlemen.</span></h2>
+                <p style="color: #888; font-size: 0.95rem; margin-bottom: 30px;">When you work with GloryStarPack, you work directly with the people making your boxes — no agents, no markups, no surprises.</p>
+                
+                <div style="display: grid; gap: 15px;">
+                    <div style="background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display: flex; gap: 20px; align-items: center;">
+                        <div style="font-size: 1.5rem;">🏭</div>
+                        <div>
+                            <h5 style="color: #fff; margin-bottom: 5px; font-size: 0.9rem;">30,000 sqm Integrated Factory</h5>
+                            <p style="color: #666; font-size: 0.75rem;">500+ skilled staff, 20+ high-speed printing lines. Every step under one roof for total quality control.</p>
+                        </div>
+                    </div>
+                    <div style="background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display: flex; gap: 20px; align-items: center;">
+                        <div style="font-size: 1.5rem;">🎨</div>
+                        <div>
+                            <h5 style="color: #fff; margin-bottom: 5px; font-size: 0.9rem;">Free In-House Design Service</h5>
+                            <p style="color: #666; font-size: 0.75rem;">Our design team creates structural dielines and artwork at no charge — ready in 24 hours.</p>
+                        </div>
+                    </div>
+                    <div style="background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display: flex; gap: 20px; align-items: center;">
+                        <div style="font-size: 1.5rem;">✅</div>
+                        <div>
+                            <h5 style="color: #fff; margin-bottom: 5px; font-size: 0.9rem;">FSC - ISO 9001 - SGS Certified</h5>
+                            <p style="color: #666; font-size: 0.75rem;">All materials are food-safe, EU & US compliant. Documentation provided at no extra cost.</p>
+                        </div>
+                    </div>
+                    <div style="background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display: flex; gap: 20px; align-items: center;">
+                        <div style="font-size: 1.5rem;">📸</div>
+                        <div>
+                            <h5 style="color: #fff; margin-bottom: 5px; font-size: 0.9rem;">Real-Time Production Updates</h5>
+                            <p style="color: #666; font-size: 0.75rem;">Photo and video proof at every production milestone — printing, die-cutting, assembly, QC.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 1px; background: linear-gradient(90deg, transparent, var(--border-gold), transparent); width: 80%; margin: 0 auto 80px;"></div>
+
+        <!-- Pricing Row -->
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h4>Small Batch</h4>
+                <p>100 – 500 pcs</p>
+                <span class="price-tag">$0.85 <span>/pc</span></span>
+                <p style="font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Standard Magnetic Box</p>
+            </div>
+            <div class="pricing-card featured" style="background: #1a1a1b; transform: scale(1.05);">
+                <div class="product-badge">Best Value</div>
+                <h4>Brand Scale</h4>
+                <p>500 – 5,000 pcs</p>
+                <span class="price-tag">$0.62 <span>/pc</span></span>
+                <p style="font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Standard Magnetic Box</p>
+            </div>
+            <div class="pricing-card">
+                <h4>Enterprise</h4>
+                <p>5,000+ pcs</p>
+                <span class="price-tag">$0.44 <span>/pc</span></span>
+                <p style="font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px;">Standard Magnetic Box</p>
             </div>
         </div>
     </section>
 
-    <section class="section" id="process">
+    <section class="finishing-detailed">
         <div class="section-header">
-            <h2>The <span>Four-Step</span> Global Partnership</h2>
-            <p>From initial design to global fulfillment, we handle every detail of your packaging supply chain.</p>
+            <h2>Luxury <span>Finishing</span> Mastery</h2>
+            <p>Every technique is a statement. We combine traditional craftsmanship with precision technology to elevate your brand's tactile experience.</p>
         </div>
-        <div class="process-steps">
-            <div class="process-step">
-                <span class="step-badge">01</span>
-                <h3>Consultation & Analysis</h3>
-                <p>We analyze your product's weight, fragile points, and retail environment to recommend the optimal board weight and structural style.</p>
+        <div class="finish-row">
+            <div class="finish-img-placeholder" style="background-image: url('https://sc02.alicdn.com/kf/A297187a536b84b80ae47ae15c9fe79471.png');"></div>
+            <div class="finish-info">
+                <span class="finish-tag">Impact Branding</span>
+                <h3>Hot Foil Stamping</h3>
+                <p>Available in Gold, Silver, Rose Gold, and Holographic. We use precision heated dies to transfer metallic pigments onto the board, creating a mirror-like finish that defines luxury.</p>
             </div>
-            <div class="process-step">
-                <span class="step-badge">02</span>
-                <h3>Dieline & Prototyping</h3>
-                <p>Free 3D digital mockups followed by a physical pre-production sample to ensure fit and finish before mass production.</p>
-            </div>
-            <div class="process-step">
-                <span class="step-badge">03</span>
-                <h3>Precision Manufacturing</h3>
-                <p>Heidelberg offset printing and automated rigid box assembly lines ensure consistency and durability for bulk B2B orders.</p>
-            </div>
-            <div class="process-step">
-                <span class="step-badge">04</span>
-                <h3>Global B2B Logistics</h3>
-                <p>Strategic warehouse fulfillment and DDP shipping to the US, Europe, and UAE in 10-14 business days.</p>
+        </div>
+        <div class="finish-row">
+            <div class="finish-img-placeholder" style="background-image: url('https://sc02.alicdn.com/kf/A96d59ad51c974bc4a7a281132d7a866ba.png');"></div>
+            <div class="finish-info">
+                <span class="finish-tag">Tactile Luxury</span>
+                <h3>Spot UV & Soft Touch</h3>
+                <p>Contrast a velvety matte base with high-gloss Spot UV accents. It's the most powerful way to make your logo "pop" while providing a premium, smudge-proof tactile surface.</p>
             </div>
         </div>
     </section>
@@ -434,64 +552,181 @@
         <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Visual Verification</span></div>
     </section>
 
-    <section id="quote">
-        <div class="quote-info">
-            <h2 style="color: var(--metallic-gold); font-size: 3rem; text-transform: uppercase; margin-bottom: 30px;">Request a <br>Global Quote</h2>
-            <p style="color: #888; margin-bottom: 40px;">Partner with GloryStarPack for factory-direct luxury packaging solutions. Our engineers respond within 24 hours.</p>
-            <div style="background: #1a1a1b; padding: 30px; border-left: 4px solid var(--metallic-gold);">
-                <p style="color: #fff; font-weight: 700; margin-bottom: 10px;">Direct Support:</p>
-                <p><a href="https://wa.me/8618020755949" style="color: var(--metallic-gold); text-decoration: none;">WhatsApp: +86 18020755949</a></p>
-                <p><a href="mailto:kevin@GloryStarPack.com" style="color: var(--metallic-gold); text-decoration: none;">Email: kevin@GloryStarPack.com</a></p>
+    <div class="certs-bar">
+        <div class="cert-item">FSC CERTIFIED</div>
+        <div class="cert-item">ISO 9001</div>
+        <div class="cert-item">SGS TESTED</div>
+        <div class="cert-item">EU COMPLIANT</div>
+        <div class="cert-item">ECO FRIENDLY</div>
+    </div>
+
+    <section class="reviews-section">
+        <div class="section-header">
+            <h2>Voices of <span>Trust</span></h2>
+            <p>Partnering with 5,000+ global brands to redefine unboxing. Here is what they say about the GloryStar experience.</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"GloryStar exceeded every expectation. The magnetic boxes arrived on time, perfectly finished. Our customers literally comment on the packaging before the product."</p>
+                <p class="reviewer">Sarah Mitchell <span>Founder, Bloom & Co. Skincare</span></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"After trying 3 other factories, GloryStar is in a completely different league. Quality is consistent, and they handled my custom size perfectly. Highly recommend."</p>
+                <p class="reviewer">James Thornton <span>Procurement, GiftCo Europe</span></p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"We order 50,000 boxes per quarter. GloryStar has never missed a deadline in 3 years. Their design team is fast and professional. The ROI is unmatched."</p>
+                <p class="reviewer">Amira Khalil <span>Supply Chain Director, Luxe Beauty</span></p>
             </div>
         </div>
-        <div class="quote-form-container">
-            <form action="#">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" placeholder="Your Name">
+    </section>
+
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Everything You <span>Need to Know</span></h2>
+            <p>New to custom packaging? We've answered the most common questions from our global B2B partners.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What is your minimum order quantity (MOQ)? <span>+</span></div>
+                <div class="faq-answer">Our standard MOQ starts at 100 pcs for rigid and magnetic gift boxes. For mailers and bags, it's 200-300 pcs. We support scaling brands.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does production and shipping take? <span>+</span></div>
+                <div class="faq-answer">Standard production is 12-18 days after sample approval. Air shipping takes 3-5 days, while sea freight takes 18-25 days depending on destination.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-preview">
+        <div class="section-header">
+            <h2>Packaging <span>Intelligence</span></h2>
+            <p>Industry insights, buying guides, and branding strategies from our packaging experts.</p>
+        </div>
+        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px;">
+            <div class="blog-card" style="background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s;">
+                <div class="blog-img" style="height: 250px; background-image: url('https://sc02.alicdn.com/kf/A1b39e8e38f444f7f999a204915db21cbX.png'); background-size: cover; background-position: center;"></div>
+                <div class="blog-content" style="padding: 25px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem; line-height: 1.4;">Complete Guide to Custom Magnetic Boxes 2026</h4>
+                    <a href="blog.html" class="blog-link" style="color: var(--metallic-gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Read Guide →</a>
                 </div>
-                <div class="form-group">
-                    <label>Business Email</label>
-                    <input type="email" placeholder="email@company.com">
+            </div>
+            <div class="blog-card" style="background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s;">
+                <div class="blog-img" style="height: 250px; background-image: url('https://sc02.alicdn.com/kf/Ae015f9d713a149d29dbca2bfcf62bbbaW.png'); background-size: cover; background-position: center;"></div>
+                <div class="blog-content" style="padding: 25px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem; line-height: 1.4;">The Art of High-Fidelity Label Branding</h4>
+                    <a href="blog.html" class="blog-link" style="color: var(--metallic-gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Read Article →</a>
                 </div>
-                <div class="form-group">
-                    <label>Product Type</label>
-                    <select>
-                        <option>Luxury Rigid Box</option>
-                        <option>Mailer Box</option>
-                        <option>Shipping Carton</option>
-                        <option>Custom Label</option>
-                    </select>
+            </div>
+            <div class="blog-card" style="background: #111; border: 1px solid #222; border-radius: 8px; overflow: hidden; transition: 0.3s;">
+                <div class="blog-img" style="height: 250px; background-image: url('https://sc02.alicdn.com/kf/A3e12296ce40447499c1e36e5ec88b1afw.png'); background-size: cover; background-position: center;"></div>
+                <div class="blog-content" style="padding: 25px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem; line-height: 1.4;">Unboxing Experience: A Modern Marketing Strategy</h4>
+                    <a href="blog.html" class="blog-link" style="color: var(--metallic-gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Read Article →</a>
                 </div>
-                <div class="form-group">
-                    <label>Estimated Quantity</label>
-                    <input type="number" placeholder="Min. 100pcs">
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="quote">
+        <div class="quote-container">
+            <div class="quote-sidebar">
+                <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+                    <div style="width: 80px; height: 80px; background: #1a1a1b; border: 1px solid var(--border-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--metallic-gold);">K</div>
+                    <div>
+                        <h4 style="color: #fff; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Kevin Tang</h4>
+                        <p style="color: var(--metallic-gold); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin: 0;">Packaging Consultant</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Project Details</label>
-                    <textarea rows="4" placeholder="Dimensions, material preferences, etc."></textarea>
+                <h2>Request a <br><span>Luxury</span> Quote</h2>
+                <p>"Hi, I'm Kevin. I help brands like yours engineer the perfect unboxing experience. Tell me your vision, and I'll handle the technical details."</p>
+                <div class="trust-pills">
+                    <div class="trust-pill">Free 3D Mockup</div>
+                    <div class="trust-pill">Global DDP Shipping</div>
+                    <div class="trust-pill">Low MOQ 100pcs</div>
                 </div>
-                <button type="submit" class="cta-button" style="width: 100%; border: none; cursor: pointer;">Send Inquiry</button>
-            </form>
+            </div>
+
+            <div class="form-card">
+                <form id="quoteForm">
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Phone (Optional)</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <select required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="magnetic">Magnetic Box</option>
+                                <option value="mailer">Mailer Box</option>
+                                <option value="drawer">Drawer Box</option>
+                                <option value="bag">Custom Bag</option>
+                                <option value="labels">Labels</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" placeholder="Min 100" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Dimensions (L x W x H)</label>
+                            <input type="text" placeholder="e.g. 20 x 15 x 8 cm" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label>Attach Design (Optional)</label>
+                        <input type="file" style="padding: 12px; font-size: 0.8rem; border: 1px dashed #444;">
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us about your project</label>
+                        <textarea rows="4" placeholder="Describe your material, finish, and timeline requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 30px; border: none; cursor: pointer;">Send Request</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <div class="floating-contact">
-        <a href="https://wa.me/8618020755949" class="float-btn float-whatsapp" target="_blank">
-            <span>Chat on WhatsApp</span>
-            <i>💬</i>
-        </a>
-        <a href="mailto:kevin@GloryStarPack.com" class="float-btn float-email">
-            <span>Send Email</span>
-            <i>✉️</i>
-        </a>
+        <a href="#" class="back-to-top" id="backToTop">↑</a>
+        <a href="https://wa.me/8618020755949" class="float-btn float-whatsapp" target="_blank"><i>💬</i></a>
+        <a href="mailto:kevin@GloryStarPack.com" class="float-btn float-email"><i>✉️</i></a>
     </div>
 
     <footer>
-        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
+        <p>&copy; 2026 GloryStarPack. All Rights Reserved.</p>
     </footer>
 
     <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            const backTop = document.getElementById('backToTop');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backTop.classList.add('show');
+            } else {
+                header.classList.remove('scrolled');
+                backTop.classList.remove('show');
+            }
+        });
+
         let slideIndex = 0;
         let slides = document.querySelectorAll(".slide");
         let dots = document.querySelectorAll(".nav-dot");
@@ -500,14 +735,11 @@
         function showSlides() {
             slides.forEach(s => s.classList.remove("active"));
             dots.forEach(d => d.classList.remove("active"));
-            
             slideIndex++;
             if (slideIndex > slides.length) {slideIndex = 1}
-            
             slides[slideIndex-1].classList.add("active");
             dots[slideIndex-1].classList.add("active");
-            
-            slideTimeout = setTimeout(showSlides, 35000); // 35 seconds
+            slideTimeout = setTimeout(showSlides, 35000); 
         }
 
         function currentSlide(n) {
@@ -521,6 +753,14 @@
         }
 
         showSlides();
+
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+                const span = item.querySelector('.faq-question span');
+                span.textContent = item.classList.contains('active') ? '-' : '+';
+            });
+        });
     </script>
 </body>
 </html>

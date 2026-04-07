@@ -26,6 +26,7 @@
             background-color: var(--primary-black); 
             color: var(--text-white); 
             line-height: 1.6; 
+            overflow-x: hidden;
         }
         
         /* Navigation */
@@ -39,95 +40,114 @@
             width: 100%;
             top: 0; 
             background: rgba(10, 10, 11, 0.95); 
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             z-index: 1000; 
+            transition: 0.4s;
         }
+        header.scrolled { padding: 15px 5%; background: rgba(0, 0, 0, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
         .logo { font-size: 22px; font-weight: 800; color: var(--metallic-gold); text-decoration: none; letter-spacing: 4px; }
         .logo span { color: var(--text-white); font-weight: 300; }
         nav a { color: var(--text-white); text-decoration: none; margin-left: 30px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; transition: var(--transition); letter-spacing: 1px; }
         nav a:hover { color: var(--metallic-gold); }
+
         .hero-sub { 
-            padding: 180px 10% 120px; 
+            padding: 200px 10% 120px; 
             text-align: center; 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://sc02.alicdn.com/kf/A5d4ba990a36d4b2189b7a83849e6cc6fc.png'); 
             background-size: cover; 
             background-position: center; 
             border-bottom: 1px solid var(--border-gold);
         }
-        .hero-sub h1 { font-size: 3.5rem; color: var(--metallic-gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 4px; }
-        .section { padding: 80px 10%; }
-        .section-dark { background-color: #111; }
-        .section-title { text-align: center; color: var(--metallic-gold); font-size: 2.5rem; margin-bottom: 60px; text-transform: uppercase; }
-        
-        /* Label Matrix */
-        .label-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        @media (max-width: 1200px) { .label-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 800px) { .label-grid { grid-template-columns: 1fr; } }
+        .hero-sub h1 { font-size: 4rem; color: var(--text-white); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 6px; }
+        .hero-sub h1 span { color: var(--metallic-gold); font-weight: 800; }
+        .hero-sub p { font-size: 1.1rem; color: var(--text-grey); max-width: 800px; margin: 0 auto; letter-spacing: 2px; }
 
-        .label-card { background: #222; border: 1px solid #333; overflow: hidden; transition: 0.3s; }
+        .section { padding: 120px 10%; position: relative; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 2.8rem; color: var(--text-white); margin-bottom: 25px; text-transform: uppercase; letter-spacing: 4px; position: relative; display: inline-block; padding-bottom: 15px; }
+        .section-header h2 span { color: var(--metallic-gold); }
+        .section-header h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background: var(--metallic-gold); }
+
+        .box-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        @media (max-width: 1200px) { .box-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 800px) { .box-grid { grid-template-columns: 1fr; } }
+
+        .label-card { background: #1a1a1b; border: 1px solid #333; overflow: hidden; transition: 0.4s; border-radius: 4px; }
         .label-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
-        .product-img { height: 350px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); }
-        .card-content { padding: 40px; }
-        .label-card h3 { color: var(--metallic-gold); font-size: 1.4rem; margin-top: 0; text-transform: uppercase; margin-bottom: 15px; min-height: 2.8rem; display: flex; align-items: center; }
-        .spec-table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 0.8rem; }
-        .spec-table td { padding: 10px 0; border-bottom: 1px solid #333; }
-        .spec-table td:first-child { color: var(--metallic-gold); font-weight: 700; width: 45%; }
+        .product-img { height: 280px; background-size: cover; background-position: center; border-bottom: 1px solid var(--border-gold); transition: 0.5s; }
+        .label-card:hover .product-img { transform: scale(1.05); }
+        .card-content { padding: 35px; }
+        .card-content h3 { color: var(--metallic-gold); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
+        .card-content p { font-size: 0.9rem; color: #888; margin-bottom: 25px; line-height: 1.7; }
         
-        /* Floating Contact Buttons */
-        .floating-contact {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .float-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: #fff;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            position: relative;
-        }
+        .spec-table { width: 100%; font-size: 0.75rem; border-collapse: collapse; color: #666; }
+        .spec-table td { padding: 12px 0; border-bottom: 1px solid #333; }
+        .spec-table td:last-child { text-align: right; color: #fff; font-weight: 600; }
+
+        .quote-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start; }
+        .quote-sidebar { position: sticky; top: 120px; }
+        .quote-sidebar h2 { font-size: 3rem; text-transform: uppercase; line-height: 1.1; margin-bottom: 30px; color: var(--metallic-gold); }
+        .quote-sidebar p { color: #888; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px; }
+        .trust-pills { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 40px; }
+        .trust-pill { background: #1a1a1b; border: 1px solid #333; padding: 10px 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: #fff; border-radius: 50px; }
+        .form-card { background: #111; border: 1px solid var(--border-gold); padding: 60px; border-radius: 8px; box-shadow: 0 40px 100px rgba(0,0,0,0.8); position: relative; }
+        .form-step { display: none; }
+        .form-step.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .step-indicator { display: flex; gap: 10px; margin-bottom: 40px; }
+        .step-dot { flex: 1; height: 4px; background: #333; border-radius: 2px; transition: 0.3s; }
+        .step-dot.active { background: var(--metallic-gold); box-shadow: 0 0 10px var(--metallic-gold); }
+        .visual-selector { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+        .visual-option { background: #000; border: 1px solid #222; padding: 20px; text-align: center; cursor: pointer; transition: 0.3s; border-radius: 4px; }
+        .visual-option:hover { border-color: var(--metallic-gold); transform: translateY(-3px); }
+        .visual-option.selected { border-color: var(--metallic-gold); background: rgba(212, 175, 55, 0.05); }
+        .visual-option svg { margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+        .visual-option span { font-size: 0.7rem; text-transform: uppercase; font-weight: 800; color: #fff; letter-spacing: 1px; }
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+        .form-group label { display: block; color: var(--metallic-gold); font-size: 0.7rem; text-transform: uppercase; font-weight: 800; margin-bottom: 10px; letter-spacing: 1px; }
+        .form-group input, .form-group textarea { width: 100%; background: #000; border: 1px solid #333; padding: 18px; color: #fff; font-size: 0.95rem; border-radius: 4px; transition: 0.3s; }
+        .btn-nav { display: flex; justify-content: space-between; margin-top: 40px; gap: 20px; }
+        .btn-back { background: transparent; border: 1px solid #444; color: #888; padding: 15px 30px; cursor: pointer; text-transform: uppercase; font-weight: 700; font-size: 0.8rem; border-radius: 4px; }
+        .btn-next { background: var(--metallic-gold); border: none; color: #000; padding: 15px 40px; cursor: pointer; text-transform: uppercase; font-weight: 800; font-size: 0.85rem; border-radius: 4px; flex: 1; }
+
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; z-index: 9999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.4); transition: 0.3s; position: relative; }
         .float-whatsapp { background-color: #25d366; }
         .float-email { background-color: var(--metallic-gold); }
-        .float-btn:hover { transform: scale(1.1); }
-        .float-btn span {
-            position: absolute;
-            right: 75px;
-            background: #fff;
-            color: #000;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            white-space: nowrap;
-            border-radius: 5px;
-            opacity: 0;
-            pointer-events: none;
-            transition: 0.3s;
-        }
+        .float-btn:hover { transform: scale(1.1) translateY(-5px); }
+        .float-btn span { position: absolute; right: 75px; background: #fff; color: #000; padding: 8px 18px; font-size: 0.85rem; font-weight: 800; white-space: nowrap; border-radius: 4px; opacity: 0; pointer-events: none; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .float-btn:hover span { opacity: 1; }
+        .back-to-top { width: 60px; height: 60px; background: #fff; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.5rem; transition: 0.4s; opacity: 0; visibility: hidden; font-weight: 800; box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--metallic-gold); color: #000; transform: translateY(-5px); }
 
-        /* Finishing Gallery */
-        .finishing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-top: 40px; }
-        .finish-item { background: #111; padding: 25px; border: 1px solid #444; text-align: center; font-size: 0.8rem; }
-        .finish-item h5 { color: var(--metallic-gold); margin-top: 0; margin-bottom: 10px; text-transform: uppercase; }
+        footer { padding: 80px 10%; text-align: center; border-top: 1px solid #111; color: #555; background: #000; font-size: 0.9rem; letter-spacing: 1px; }
 
-        footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
-        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; }
-        .cta-button:hover { transform: scale(1.05); background-color: #f1c40f; }
+        .finish-item { background: #111; padding: 30px 20px; border: 1px solid #222; border-radius: 2px; transition: 0.3s; text-align: center; }
+        .finish-item:hover { border-color: var(--metallic-gold); background: #1a1a1b; }
+        .finish-item h5 { color: #fff; margin-bottom: 8px; text-transform: uppercase; font-size: 0.85rem; font-weight: 800; }
+        .finish-item p { color: #555; font-size: 0.75rem; }
+
+        /* Stats Bar */
+        .stats-grid { display: flex; justify-content: space-around; padding: 60px 10%; background: #000; border-top: 1px solid var(--border-gold); border-bottom: 1px solid var(--border-gold); }
+        .stat-item { text-align: center; }
+        .stat-num { font-size: 2.5rem; font-weight: 800; color: var(--metallic-gold); display: block; margin-bottom: 10px; }
+        .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #666; font-weight: 600; }
+
+        /* Material Swatches */
+        .swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+        .swatch-item { background: #111; padding: 30px; border: 1px solid #222; border-radius: 4px; text-align: center; transition: 0.3s; }
+        .swatch-item:hover { border-color: var(--metallic-gold); transform: translateY(-5px); }
+        .swatch-circle { width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 20px; border: 1px solid #333; background-size: cover; }
+        .swatch-item h5 { color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; font-size: 0.85rem; }
+        .swatch-item p { color: #555; font-size: 0.75rem; line-height: 1.5; }
+
+        .cta-button { background-color: var(--metallic-gold); color: var(--primary-black); padding: 18px 45px; text-decoration: none; font-weight: 700; border-radius: 2px; display: inline-block; transition: 0.3s; text-transform: uppercase; border: none; }
     </style>
 </head>
 <body>
-    <header>
+    <header id="mainHeader">
         <a href="index.html" class="logo">GLORYSTAR<span>PACK</span></a>
         <nav>
             <a href="index.html">Home</a>
@@ -139,179 +159,312 @@
     </header>
 
     <section class="hero-sub">
-        <h1>High-End Custom Labels</h1>
-        <p>Premium branding solutions designed to make your boxes unforgettable.</p>
+        <h1>High-End <span>Custom Labels</span></h1>
+        <p>Premium branding solutions designed to make your boxes unforgettable. Metallic accents, textured papers, and industrial-grade adhesives.</p>
     </section>
 
-    <!-- Specialty Label Materials -->
-    <section class="section section-dark">
-        <h2 class="section-title">Luxury Material Selection</h2>
-        <p style="text-align: center; color: #888; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto;">Our label stocks are curated for both high-end aesthetic appeal and extreme durability under varied B2B conditions.</p>
-        <div style="overflow-x: auto;">
-            <table class="spec-table" style="width: 100%; max-width: 1000px; margin: 0 auto; background: #1a1a1a; border: 1px solid #333;">
-                <thead style="background: #222;">
-                    <tr>
-                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Label Type</th>
-                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Base Material</th>
-                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">Best Finishing</th>
-                        <th style="padding: 20px; text-align: left; color: var(--metallic-gold); border-bottom: 2px solid var(--metallic-gold);">B2B Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Boutique Label</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Linen / Felt Textured Paper</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Hot Foil Stamping</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Wine & Spirits, Premium Food</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">High-End Metallic</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Silver / Gold PET Film</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Spot UV + Soft Touch</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Luxury Tech, Jewelry, Skincare</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Durable Synthetic</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">BOPP / Vinyl Film</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Anti-Scratch Lamination</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Toiletries, Beauty Products</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Eco-Artisan</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Recycled Kraft / Wood Pulp</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Water-Based Screen Print</td>
-                        <td style="padding: 20px; border-bottom: 1px solid #333;">Natural Skincare, Eco-Packaging</td>
-                    </tr>
-                </tbody>
-            </table>
+    <section class="stats-grid">
+        <div class="stat-item"><span class="stat-num">BOPP</span><span class="stat-label">Waterproof Film</span></div>
+        <div class="stat-item"><span class="stat-num">FSC</span><span class="stat-label">Sustainable Sourcing</span></div>
+        <div class="stat-item"><span class="stat-num">ISO</span><span class="stat-label">Quality Managed</span></div>
+        <div class="stat-item"><span class="stat-num">UV+</span><span class="stat-label">Sun-Fade Proof</span></div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The <span>Label Matrix</span></h2>
+            <p>Six specialized categories engineered for the world's most demanding luxury markets.</p>
         </div>
-    </section>
-
-    <!-- Custom Label Categories -->
-    <section class="section" id="products">
-        <h2 class="section-title">Our Labeling Portfolio</h2>
-        <div class="label-grid">
-            <!-- Metallic Foil -->
+        <div class="box-grid">
+            <!-- 1. Metallic Foil Label -->
             <div class="label-card">
                 <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A297187a536b84b80ae47ae15c9fe79471.png');"></div>
                 <div class="card-content">
-                    <h3>Metallic & Foil Accents</h3>
-                    <p>Hot-stamped gold, silver, and copper foil for high-end boutique and tech packaging.</p>
+                    <h3>Metallic Foil Labels</h3>
+                    <p>Instant premium signaling with Gold, Silver, or Rose Gold foil. Precision die-cutting for luxury boxes and bottles.</p>
                     <table class="spec-table">
-                        <tr><td>Base Material</td><td>BOPP / Metallic PET</td></tr>
-                        <tr><td>Finishing</td><td>Gold / Silver / Rose Foil</td></tr>
-                        <tr><td>Application</td><td>Luxury Boxes / Electronics</td></tr>
-                        <tr><td>MOQ</td><td>Premium Tier Available</td></tr>
+                        <tr><td>Base Material</td><td>Premium PET / Metallic Film</td></tr>
+                        <tr><td>Finishing</td><td>Hot Stamping / Gloss UV</td></tr>
+                        <tr><td>MOQ</td><td>500 pcs</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Industrial Waterproof -->
+            <!-- 2. Estate Textured Label -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Af330b3faf7de441f954b7188c9c5fb42T.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A97f17fc36d724fb3b341bf7134d4170fc.png');"></div>
                 <div class="card-content">
-                    <h3>Waterproof Industrial Seals</h3>
-                    <p>Heavy-duty adhesives and matte lamination for shipping cartons and outdoor warehousing.</p>
+                    <h3>Textured Wine Labels</h3>
+                    <p>Estate paper with distinct tactile feel and ornate gold foil patterns. Moisture-resistant for high-end wine and spirits.</p>
                     <table class="spec-table">
-                        <tr><td>Base Material</td><td>Vinyl / Synthetic Poly</td></tr>
-                        <tr><td>Surface Finish</td><td>UV Laminated / Matte / Satin</td></tr>
-                        <tr><td>Durability</td><td>Moisture & Heat Resistant</td></tr>
-                        <tr><td>Adhesive</td><td>Extra High-Tack Permanent</td></tr>
+                        <tr><td>Material</td><td>Linen / Felt / Cream Paper</td></tr>
+                        <tr><td>Adhesive</td><td>Cold-Temp Permanent</td></tr>
+                        <tr><td>MOQ</td><td>300 pcs</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Artisan Textured -->
+            <!-- 3. Ultra-Clear BOPP Label -->
             <div class="label-card">
                 <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A96d59ad51c974bc4a7a281132d7a866ba.png');"></div>
                 <div class="card-content">
-                    <h3>Artisan Textured Papers</h3>
-                    <p>Premium tactile papers with linen or felt finish for wine, food, and high-end gifts.</p>
+                    <h3>Clear 'No-Label' PET</h3>
+                    <p>Ultra-transparent BOPP that disappears on dark boxes or glass. Waterproof and oil-resistant with high-gloss metallic logo.</p>
                     <table class="spec-table">
-                        <tr><td>Base Material</td><td>FSC Textured Paper / Felt</td></tr>
-                        <tr><td>Technique</td><td>Multi-level Emboss / Deboss</td></tr>
-                        <tr><td>Aesthetic</td><td>Handcrafted / Luxury Artisan</td></tr>
-                        <tr><td>MOQ</td><td>Low Minimums (No barriers)</td></tr>
+                        <tr><td>Transparency</td><td>99.9% Crystal Clear</td></tr>
+                        <tr><td>Material</td><td>Waterproof BOPP Film</td></tr>
+                        <tr><td>MOQ</td><td>500 pcs</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Security Seals -->
+            <!-- 4. Embossed Luxury Label -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A9acc6aba8f6341c994fb72af060c70a0x.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Aa7c55935e876466ea41d0b028f27f6502.png');"></div>
                 <div class="card-content">
-                    <h3>Tamper-Evident Security Seals</h3>
-                    <p>Bespoke security labels to protect high-value B2B shipments and retail products.</p>
+                    <h3>3D Embossed Labels</h3>
+                    <p>Raised textures that invite touch. High-precision macro image showcasing 3D depth and shadow for structural branding.</p>
                     <table class="spec-table">
-                        <tr><td>Base Material</td><td>Fragmenting Film / Void Film</td></tr>
-                        <tr><td>Visual</td><td>Holographic / Custom Print</td></tr>
-                        <tr><td>Usage</td><td>Logistics / Electronics / Luxury</td></tr>
-                        <tr><td>MOQ</td><td>Scalable B2B Tiers</td></tr>
+                        <tr><td>Depth</td><td>0.5mm Deep Emboss</td></tr>
+                        <tr><td>Effect</td><td>3D Structural Branding</td></tr>
+                        <tr><td>MOQ</td><td>300 pcs</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- Wine Label -->
+            <!-- 5. Soft-Touch Matte Labels -->
             <div class="label-card">
-                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A1b39e8e38f444f7f999a204915db21cbX.png');"></div>
+                <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/Af595765c3ad3441aa4267afb4f42645bJ.png');"></div>
                 <div class="card-content">
-                    <h3>Artisan Wine & Spirits Labels</h3>
-                    <p>Deep embossed, ice-bucket resistant labels for the world's finest vineyards and distilleries.</p>
+                    <h3>Soft-Touch Matte Labels</h3>
+                    <p>A velvety, suede-like finish that eliminates fingerprints. High-precision macro image showcasing velvet matte luxury texture.</p>
                     <table class="spec-table">
-                        <tr><td>Material</td><td>Estate Textured Paper</td></tr>
-                        <tr><td>Resistance</td><td>Water & Ice Persistent</td></tr>
-                        <tr><td>Finish</td><td>High-Build Spot UV</td></tr>
-                        <tr><td>MOQ</td><td>Premium Collection Tiers</td></tr>
+                        <tr><td>Texture</td><td>Velvet Soft-Touch</td></tr>
+                        <tr><td>Finishing</td><td>Anti-Scratch Matte</td></tr>
+                        <tr><td>MOQ</td><td>500 pcs</td></tr>
                     </table>
                 </div>
             </div>
 
-            <!-- RFID Label -->
+            <!-- 6. Smart RFID Labels -->
             <div class="label-card">
                 <div class="product-img" style="background-image: url('https://sc02.alicdn.com/kf/A8b4be94190a74b79a2d08ee99652d9642.png');"></div>
                 <div class="card-content">
-                    <h3>Smart RFID Tracking Labels</h3>
-                    <p>Integrated RFID/NFC chips for seamless inventory management and anti-counterfeit protection.</p>
+                    <h3>RFID/NFC Smart Labels</h3>
+                    <p>Integrated intelligence for supply chain tracking. Image clearly showcases the intricate circuit antenna structure.</p>
                     <table class="spec-table">
                         <tr><td>Technology</td><td>UHF / NFC Integrated</td></tr>
-                        <tr><td>Range</td><td>Long Range Read Capability</td></tr>
-                        <tr><td>Material</td><td>Durable Polyester Film</td></tr>
-                        <tr><td>MOQ</td><td>High-Volume Logistics Tier</td></tr>
+                        <tr><td>Range</td><td>Long-Range Read Capable</td></tr>
+                        <tr><td>MOQ</td><td>10,000 pcs</td></tr>
                     </table>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Label Finishes & Adhesive -->
     <section class="section section-dark">
-        <h2 class="section-title">Surface Finishing Gallery</h2>
-        <div class="finishing-grid">
-            <div class="finish-item"><h5>Matte/Gloss</h5><p>Anti-Reflective / High-Shine</p></div>
-            <div class="finish-item"><h5>Spot UV</h5><p>Tactile Gloss Accents</p></div>
-            <div class="finish-item"><h5>Hot Foil</h5><p>Gold/Silver Stamping</p></div>
-            <div class="finish-item"><h5>Embossing</h5><p>Raised Text & Patterns</p></div>
-            <div class="finish-item"><h5>Soft Touch</h5><p>Velvet-like Surface</p></div>
-            <div class="finish-item"><h5>Die-Cutting</h5><p>Bespoke Shape Options</p></div>
-            <div class="finish-item"><h5>Inside Print</h5><p>Double-Sided Branding</p></div>
-            <div class="finish-item"><h5>Anti-Scratch</h5><p>Durable Shield Coating</p></div>
+        <div class="section-header">
+            <h2>Adhesive <span>Engineering</span></h2>
+            <p>Choosing the right adhesive ensures your brand stays intact from the factory to the consumer's hands.</p>
         </div>
-
-        <h3 style="color: var(--metallic-gold); text-align: center; margin-top: 80px; text-transform: uppercase;">Adhesive Solutions</h3>
-        <div class="label-grid" style="margin-top: 40px; grid-template-columns: repeat(3, 1fr);">
-            <div class="finish-item"><h5>Permanent High-Tack</h5><p>For corrugated cartons and raw surfaces.</p></div>
-            <div class="finish-item"><h5>Removable Adhesive</h5><p>Clean removal for seasonal promotions.</p></div>
-            <div class="finish-item"><h5>Void-Visible Adhesive</h5><p>Instant tamper evidence for security.</p></div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+            <div style="background: #000; padding: 45px; border-left: 4px solid var(--metallic-gold); border-radius: 4px;">
+                <h4 style="color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Environmental Resilience</h4>
+                <p style="color: #888; font-size: 0.95rem; line-height: 1.8;">We offer adhesives specialized for extreme environments where standard labels fail:</p>
+                <ul style="list-style: none; margin-top: 25px; color: #ccc; font-size: 0.9rem;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">❄️ <strong>Cold Temp:</strong> For refrigerated food and beverage storage.</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">🔥 <strong>High Heat:</strong> For industrial electronics and battery casing.</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">💧 <strong>High Moisture:</strong> For bathroom, luxury spa, and shower products.</li>
+                </ul>
+            </div>
+            <div style="background: #000; padding: 45px; border-left: 4px solid var(--metallic-gold); border-radius: 4px;">
+                <h4 style="color: #fff; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">Surface Compatibility</h4>
+                <p style="color: #888; font-size: 0.95rem; line-height: 1.8;">We match the label tack to your specific surface material for 100% adherence:</p>
+                <ul style="list-style: none; margin-top: 25px; color: #ccc; font-size: 0.9rem;">
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">📦 <strong>Corrugated:</strong> High-tack for rough, porous paper surfaces.</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">🧴 <strong>Glass/Plastic:</strong> Clean removal options for reusable packaging.</li>
+                    <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px;">📐 <strong>Tight Mandrel:</strong> For small diameter curves like tubes and vials.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section style="padding: 100px 10%; text-align: center; background: #000;">
-        <h2 style="color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase;">Request Wholesale Label Quote</h2>
-        <p style="color: #888; margin-bottom: 50px;">Receive a tailored quote and structural design advice within 24 hours.</p>
-        <a href="https://wa.me/8618020755949" class="cta-button">Consult with Label Specialist</a>
+    <section class="section">
+        <div class="section-header">
+            <h2>Surface <span>Finishing</span> Gallery</h2>
+            <p>Texture is the silent salesman. We offer the world's most advanced finishing techniques for B2B branding.</p>
+        </div>
+        <div class="finishing-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Matte/Gloss</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Premium Shield</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Spot UV</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Tactile Contrast</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Hot Foil</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Metallic Gold</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Embossing</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">3D Texture</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Soft Touch</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Velvet Suede</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Die-Cutting</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Bespoke Shape</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Inside Print</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Hidden Branding</p>
+            </div>
+            <div class="finish-item" style="background: #fcfcfc; padding: 25px; border: 1px solid #eee; border-radius: 4px; text-align: center; transition: 0.3s; cursor: pointer;">
+                <h5 style="text-transform: uppercase; letter-spacing: 1px; color: #000; margin-bottom: 5px;">Anti-Scratch</h5>
+                <p style="font-size: 0.75rem; color: #999; margin: 0;">Industrial Shield</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="section-header">
+            <h2>Label <span>Substrate Swatches</span></h2>
+            <p>From crystal clear films to heritage textured papers, we provide the perfect foundation for your brand's unique tactile identity.</p>
+        </div>
+        <div class="swatch-grid">
+            <div class="swatch-item">
+                <div class="swatch-circle" style="background-image: url('https://sc02.alicdn.com/kf/Adc7a050b7ca54ba79c3693ef82f988ed1.png');"></div>
+                <h5>Clear BOPP</h5>
+                <p>99% transparency, perfect for the "no-label" look on glass or dark boxes.</p>
+            </div>
+            <div class="swatch-item">
+                <div class="swatch-circle" style="background-image: url('https://sc02.alicdn.com/kf/A3ec87ff4c8c04d81a19040a9b99a8a0aY.png');"></div>
+                <h5>Estate Linen</h5>
+                <p>Classic textured paper with a natural feel, optimized for luxury spirits.</p>
+            </div>
+            <div class="swatch-item">
+                <div class="swatch-circle" style="background-image: url('https://sc02.alicdn.com/kf/A8453c03d37fe4f709e45af5e754b46eaI.png');"></div>
+                <h5>Metallic PET</h5>
+                <p>High-gloss mirror finish available in Gold, Silver, and Rose Gold.</p>
+            </div>
+            <div class="swatch-item">
+                <div class="swatch-circle" style="background-image: url('https://sc02.alicdn.com/kf/Aa44fb600caf040e8b6b2c8619cde0b15J.png');"></div>
+                <h5>Matte Paper</h5>
+                <p>Smooth, non-reflective surface for a modern and sophisticated aesthetic.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>Your <span>Unboxing Journey</span></h2>
+            <p>We've simplified the path from a blank canvas to a global unboxing event in five easy steps.</p>
+        </div>
+        <div class="journey-container">
+            <div class="journey-line"></div>
+            <div class="journey-steps" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px;">
+                <div class="journey-step">
+                    <div class="journey-dot">01</div>
+                    <h5 style="text-transform: uppercase; letter-spacing: 2px;">Define Brief</h5>
+                    <p>Submit your specs and logo for expert review.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-dot">02</div>
+                    <h5 style="text-transform: uppercase; letter-spacing: 2px;">Free Design</h5>
+                    <p>Receive custom 3D dielines and visual mockups.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-dot">03</div>
+                    <h5 style="text-transform: uppercase; letter-spacing: 2px;">Pro Sample</h5>
+                    <p>Physical prototype for final material verification.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-dot">04</div>
+                    <h5 style="text-transform: uppercase; letter-spacing: 2px;">Mass Production</h5>
+                    <p>Precision printing and high-fidelity finishing.</p>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-dot">05</div>
+                    <h5 style="text-transform: uppercase; letter-spacing: 2px;">Global Delivery</h5>
+                    <p>Global fulfillment with 15-day DDP shipping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="quote" style="background: #000; border-top: 1px solid var(--border-gold);">
+        <div class="quote-container">
+            <div class="quote-sidebar">
+                <h2>Request a <br><span>Luxury</span> Quote</h2>
+                <p>Engineered for global leaders. Our structural specialists respond with 3D dielines and transparent pricing within 24 hours.</p>
+                <div class="trust-pills">
+                    <div class="trust-pill">Free 3D Mockup</div>
+                    <div class="trust-pill">Global DDP Shipping</div>
+                    <div class="trust-pill">FSC Certified Paper</div>
+                    <div class="trust-pill">Low MOQ 100pcs</div>
+                </div>
+            </div>
+
+            <div class="form-card">
+                <form id="quoteForm">
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="john@company.com" required>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Phone (Optional)</label>
+                            <input type="tel" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Category</label>
+                            <select required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="magnetic">Magnetic Box</option>
+                                <option value="mailer">Mailer Box</option>
+                                <option value="drawer">Drawer Box</option>
+                                <option value="bag">Custom Bag</option>
+                                <option value="labels">Labels</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input type="number" placeholder="Min 100" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Dimensions (L x W x H)</label>
+                            <input type="text" placeholder="e.g. 20 x 15 x 8 cm" required>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 25px;">
+                        <label>Attach Design (Optional)</label>
+                        <input type="file" style="padding: 12px; font-size: 0.8rem; border: 1px dashed #444;">
+                    </div>
+                    <div class="form-group">
+                        <label>Tell us about your project</label>
+                        <textarea rows="4" placeholder="Describe your material, finish, and timeline requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%; margin-top: 30px; border: none; cursor: pointer;">Send Request</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <div class="floating-contact">
+        <a href="#" class="back-to-top" id="backToTop">↑</a>
         <a href="https://wa.me/8618020755949" class="float-btn float-whatsapp" target="_blank">
             <span>Chat on WhatsApp</span>
             <i>💬</i>
@@ -324,7 +477,21 @@
 
     <footer>
         <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">Email: kevin@GloryStarPack.com | WhatsApp: +86 18020755949</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #444;">Email: kevin@GloryStarPack.com | WhatsApp: +86 18020755949</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            const backTop = document.getElementById('backToTop');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+                backTop.classList.add('show');
+            } else {
+                header.classList.remove('scrolled');
+                backTop.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>

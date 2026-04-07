@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Story & Blog | GloryStarPack | The Soul of Luxury Packaging</title>
-    <meta name="description" content="Discover the story behind GloryStarPack. Read our blog for packaging trends, design tips, and industry insights. Luxury boxes, custom labels, and global branding.">
+    <title>Brand Story & Insights | GloryStarPack | Luxury Packaging Intelligence</title>
+    <meta name="description" content="Explore the story of GloryStarPack and our latest insights on luxury packaging design, sustainable materials, and structural engineering.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,16 +20,8 @@
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Montserrat', sans-serif; 
-            background-color: var(--primary-black); 
-            color: var(--text-white); 
-            line-height: 1.6; 
-        }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--primary-black); color: var(--text-white); line-height: 1.6; }
         
         /* Navigation */
         header { 
@@ -58,36 +50,72 @@
             background-position: center; 
             border-bottom: 1px solid var(--border-gold); 
         }
-        .hero-sub h1 { font-size: 3rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 4px; }
+        .hero-sub h1 { font-size: 3rem; color: var(--metallic-gold); text-transform: uppercase; letter-spacing: 4px; margin-bottom: 20px; }
+        .hero-sub p { color: #bbb; max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
 
-        .section { padding: 80px 10%; }
-        .section-dark { background: #111; }
+        .section { padding: 100px 10%; }
+        .section-dark { background: #0D0D0E; }
         
-        /* Brand Story */
-        .story-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .story-content h2 { color: var(--metallic-gold); font-size: 2.2rem; margin-bottom: 30px; text-transform: uppercase; }
-        .story-content p { color: #bbb; margin-bottom: 20px; font-size: 1.05rem; }
-        .story-image img { width: 100%; border: 1px solid var(--border-gold); border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        /* Brand Story & Stats */
+        .story-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: flex-start; margin-bottom: 60px; }
+        .story-text h2 { color: var(--metallic-gold); font-size: 2.2rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
+        .story-text p { color: #bbb; margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; }
+        
+        .stats-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .stat-box { background: #111; padding: 30px; border: 1px solid var(--border-gold); text-align: center; border-radius: 4px; }
+        .stat-box span { display: block; }
+        .stat-val { font-size: 2.5rem; font-weight: 800; color: var(--metallic-gold); margin-bottom: 10px; }
+        .stat-lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
 
+        /* Main Blog Layout */
+        .blog-layout { display: grid; grid-template-columns: 1fr 300px; gap: 60px; margin-top: 50px; }
+        
+        /* Featured Post */
+        .featured-post { margin-bottom: 80px; border: 1px solid #222; background: #111; border-radius: 8px; overflow: hidden; display: flex; align-items: stretch; transition: 0.3s; }
+        .featured-post:hover { border-color: var(--metallic-gold); }
+        .featured-img { width: 50%; background: url('https://sc02.alicdn.com/kf/Aa179fe4e9dd44d1eae32ceb7d7d227fb3.png') center/cover no-repeat; min-height: 350px; }
+        .featured-content { padding: 50px; width: 50%; display: flex; flex-direction: column; justify-content: center; }
+        .featured-tag { background: var(--metallic-gold); color: #000; padding: 4px 12px; font-size: 0.7rem; font-weight: 800; border-radius: 20px; align-self: flex-start; margin-bottom: 20px; text-transform: uppercase; }
+        .featured-post h3 { font-size: 1.8rem; margin-bottom: 20px; line-height: 1.2; }
+        
         /* Blog Grid */
-        .blog-header { text-align: center; margin-bottom: 60px; }
-        .blog-header h2 { color: var(--metallic-gold); font-size: 2.5rem; text-transform: uppercase; }
-        .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .blog-card { background: var(--dark-grey); border: 1px solid #333; transition: var(--transition); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; }
-        .blog-card:hover { border-color: var(--metallic-gold); transform: translateY(-10px); }
-        .blog-img { height: 220px; background-size: cover; background-position: center; }
-        .blog-content { padding: 30px; flex-grow: 1; }
-        .blog-date { color: var(--metallic-gold); font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; }
-        .blog-card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-white); transition: 0.3s; }
-        .blog-card:hover h3 { color: var(--metallic-gold); }
-        .blog-excerpt { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
-        .read-more { color: var(--metallic-gold); text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; border-bottom: 1px solid transparent; transition: 0.3s; }
-        .read-more:hover { border-bottom: 1px solid var(--metallic-gold); }
-
-        footer { padding: 60px 10%; text-align: center; border-top: 1px solid var(--border-gold); color: #555; }
+        .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .blog-card { background: #111; border: 1px solid #222; transition: var(--transition); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+        .blog-card:hover { border-color: var(--metallic-gold); transform: translateY(-5px); }
+        .blog-img-box { height: 200px; background-size: cover; background-position: center; }
+        .blog-card-content { padding: 25px; flex-grow: 1; }
+        .blog-meta { color: var(--metallic-gold); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; display: block; text-transform: uppercase; }
+        .blog-card h4 { font-size: 1.1rem; margin-bottom: 15px; color: #fff; line-height: 1.4; }
         
-        @media (max-width: 1024px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } .story-container { grid-template-columns: 1fr; } }
-        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .hero-sub h1 { font-size: 2rem; } }
+        /* Sidebar Styles */
+        .sidebar-widget { margin-bottom: 50px; }
+        .sidebar-widget h5 { color: var(--metallic-gold); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; border-left: 3px solid var(--metallic-gold); padding-left: 15px; }
+        
+        .search-box { display: flex; border: 1px solid #333; border-radius: 4px; overflow: hidden; }
+        .search-box input { background: #111; border: none; padding: 12px 15px; color: #fff; width: 100%; outline: none; }
+        .search-box button { background: #222; border: none; color: #fff; padding: 0 15px; cursor: pointer; transition: 0.3s; }
+        .search-box button:hover { background: var(--metallic-gold); color: #000; }
+        
+        .category-list { list-style: none; }
+        .category-list li { margin-bottom: 12px; }
+        .category-list a { color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s; display: flex; justify-content: space-between; }
+        .category-list a:hover { color: var(--metallic-gold); }
+        .cat-count { background: #222; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; }
+        
+        .newsletter-box { background: linear-gradient(135deg, #1a1a1c, #0d0d0e); padding: 30px; border-radius: 8px; border: 1px solid var(--border-gold); text-align: center; }
+        .newsletter-box p { font-size: 0.85rem; color: #888; margin-bottom: 20px; }
+        .newsletter-box input { background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 12px; color: #fff; width: 100%; border-radius: 4px; margin-bottom: 15px; text-align: center; }
+        .newsletter-btn { background: var(--metallic-gold); color: #000; padding: 12px; width: 100%; border: none; font-weight: 800; border-radius: 4px; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+        .newsletter-btn:hover { background: var(--gold-hover); }
+
+        footer { padding: 80px 10% 40px; text-align: center; border-top: 1px solid var(--border-gold); }
+        .footer-social { display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; }
+        .footer-social a { color: #888; font-size: 0.8rem; text-decoration: none; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; transition: 0.3s; }
+        .footer-social a:hover { color: var(--metallic-gold); }
+        .copyright { color: #444; font-size: 0.75rem; letter-spacing: 1px; }
+
+        @media (max-width: 1100px) { .blog-layout { grid-template-columns: 1fr; } .story-grid { grid-template-columns: 1fr; gap: 40px; } .featured-post { flex-direction: column; } .featured-img, .featured-content { width: 100%; } }
+        @media (max-width: 768px) { .blog-grid { grid-template-columns: 1fr; } .hero-sub h1 { font-size: 2.2rem; } .section { padding: 60px 5%; } }
     </style>
 </head>
 <body>
@@ -103,62 +131,139 @@
     </header>
 
     <section class="hero-sub">
-        <h1>GloryStar Insights</h1>
-        <p>Crafting the Narrative of Luxury and Precision.</p>
+        <h1>GloryStar Intelligence</h1>
+        <p>The intersection of structural engineering, brand psychology, and luxury aesthetics.</p>
     </section>
 
+    <!-- Brand Story & Stats -->
     <section class="section">
-        <div class="story-container">
-            <div class="story-content">
+        <div class="story-grid">
+            <div class="story-text">
                 <h2>Our Story</h2>
-                <p>GloryStarPack was born from a simple yet powerful realization: in the world of high-end brands, the first touchpoint isn't the product—it's the packaging.</p>
-                <p>Founded as a specialized division of the GloryStar Group, we set out to bridge the gap between industrial-scale manufacturing and artisanal design. We didn't want to be just another supplier; we wanted to be the silent architects of the unboxing experience.</p>
-                <p>Today, from our advanced factory facilities, we empower thousands of brands worldwide to tell their story through textured papers, metallic foils, and structural engineering that defies the ordinary. We believe that every box carries a promise, and every label seals a reputation.</p>
+                <p>GloryStarPack was born from a simple yet powerful realization: in the luxury B2B world, the first touchpoint isn't the product—it's the architecture of the reveal.</p>
+                <p>Founded as a precision engineering division of the GloryStar Group, we set out to redefine the unboxing experience. We didn't want to be just a supplier; we wanted to be the silent architects of your brand's reputation.</p>
+                <p>Today, our 30,000 sqm integrated facility empowers global leaders to tell their story through textured materials, metallic foils, and structural dielines that challenge the ordinary. We believe every box carries a promise, and every label seals a legacy.</p>
             </div>
-            <div class="story-image">
-                <img src="https://sc02.alicdn.com/kf/A80d238cfc5a8487e9256d4c5ad5b0fdf6.png" alt="GloryStarPack Craftsmanship">
+            <div class="stats-boxes">
+                <div class="stat-box">
+                    <span class="stat-val">15+</span>
+                    <span class="stat-lbl">Years Experience</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">500+</span>
+                    <span class="stat-lbl">Skilled Staff</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">30k</span>
+                    <span class="stat-lbl">SQM Facility</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-val">24h</span>
+                    <span class="stat-lbl">Design Turnaround</span>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- The Journal (Blog with Sidebar) -->
     <section class="section section-dark">
-        <div class="blog-header">
-            <h2>The Packaging Journal</h2>
-            <p>Expert insights on design trends, material innovation, and brand strategy.</p>
-        </div>
-        <div class="blog-grid">
-            <div class="blog-card">
-                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png');"></div>
-                <div class="blog-content">
-                    <span class="blog-date">APRIL 3, 2026</span>
-                    <h3>The Art of the Unboxing: Why Experience is the New Marketing</h3>
-                    <p class="blog-excerpt">Explore how custom rigid boxes and luxury finishes create emotional connections with customers the moment they receive their package.</p>
-                    <a href="#" class="read-more">Read Entry</a>
+        <div class="blog-layout">
+            <div class="blog-main">
+                <div class="featured-post">
+                    <div class="featured-img"></div>
+                    <div class="featured-content">
+                        <span class="featured-tag">Industry Focus</span>
+                        <h3>The Art of the Unboxing: Transforming Packaging into Marketing Assets</h3>
+                        <p style="color: #888; margin-bottom: 25px; font-size: 0.95rem;">Explore how custom rigid boxes and precision finishes create high-value emotional connections with your customers.</p>
+                        <a href="#" class="read-more">Read Full Entry →</a>
+                    </div>
+                </div>
+
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-img-box" style="background-image: url('https://sc02.alicdn.com/kf/A8899c80222d9499ab41dcdeeebc88e93b.png');"></div>
+                        <div class="blog-card-content">
+                            <span class="blog-meta">APRIL 3, 2026 | DESIGN</span>
+                            <h4>Metallic Foil vs. Spot UV: Choosing Your Luxury Finish</h4>
+                            <p class="blog-excerpt">A technical guide for designers on selecting premium label finishes that elevate brand perception.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img-box" style="background-image: url('https://sc02.alicdn.com/kf/Ae81a9480f27047a8b688d6b58ea2370cW.png');"></div>
+                        <div class="blog-card-content">
+                            <span class="blog-meta">MARCH 25, 2026 | ENGINEERING</span>
+                            <h4>Sustainable Luxury: The FSC-Certified Path</h4>
+                            <p class="blog-excerpt">How modern brands are balancing environmental responsibility with premium aesthetics in their solutions.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img-box" style="background-image: url('https://sc02.alicdn.com/kf/Ac1497ad5f0714fd3a93c6434b07f7b09c.png');"></div>
+                        <div class="blog-card-content">
+                            <span class="blog-meta">MARCH 12, 2026 | TRENDS</span>
+                            <h4>The Rise of Minimalist Box Structural Design</h4>
+                            <p class="blog-excerpt">Why "Less is More" is dominating the luxury packaging market in 2026.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-img-box" style="background-image: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png');"></div>
+                        <div class="blog-card-content">
+                            <span class="blog-meta">FEB 28, 2026 | PRODUCTION</span>
+                            <h4>Factory Direct: The Logistics of Global Packaging Fulfillment</h4>
+                            <p class="blog-excerpt">Understanding lead times, DDP shipping, and quality control at scale.</p>
+                            <a href="#" class="read-more">Read More</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="blog-card">
-                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Adc7db7a9b4dc47f8a21314cfe8927b31C.png');"></div>
-                <div class="blog-content">
-                    <span class="blog-date">MARCH 25, 2026</span>
-                    <h3>Metallic Foil vs. Spot UV: Choosing the Right Luxury Finish</h3>
-                    <p class="blog-excerpt">A technical guide for designers on selecting premium label finishes that elevate brand perception and shelf presence.</p>
-                    <a href="#" class="read-more">Read Entry</a>
+
+            <aside class="blog-sidebar">
+                <div class="sidebar-widget">
+                    <h5>Search Journal</h5>
+                    <div class="search-box">
+                        <input type="text" placeholder="Design, FSC, Labels...">
+                        <button>Search</button>
+                    </div>
                 </div>
-            </div>
-            <div class="blog-card">
-                <div class="blog-img" style="background-image: url('https://sc02.alicdn.com/kf/Aed0b78bad1344296b0473b9c7a3863019.png');"></div>
-                <div class="blog-content">
-                    <span class="blog-date">MARCH 12, 2026</span>
-                    <h3>Sustainable Luxury: The Rise of FSC-Certified Custom Packaging</h3>
-                    <p class="blog-excerpt">How modern brands are balancing environmental responsibility with premium aesthetics in their shipping solutions.</p>
-                    <a href="#" class="read-more">Read Entry</a>
+
+                <div class="sidebar-widget">
+                    <h5>Categories</h5>
+                    <ul class="category-list">
+                        <li><a href="#">Design Tips <span class="cat-count">12</span></a></li>
+                        <li><a href="#">Material Science <span class="cat-count">08</span></a></li>
+                        <li><a href="#">Engineering <span class="cat-count">05</span></a></li>
+                        <li><a href="#">Case Studies <span class="cat-count">14</span></a></li>
+                        <li><a href="#">Sustainability <span class="cat-count">09</span></a></li>
+                    </ul>
                 </div>
-            </div>
+
+                <div class="sidebar-widget">
+                    <h5>The Insider</h5>
+                    <div class="newsletter-box">
+                        <p>Join 5,000+ brand owners receiving monthly packaging intelligence.</p>
+                        <input type="email" placeholder="Your Work Email">
+                        <button class="newsletter-btn">Subscribe</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h5>Connect</h5>
+                    <p style="color: #666; font-size: 0.85rem; margin-bottom: 15px;">Follow our production journey on LinkedIn and Instagram.</p>
+                </div>
+            </aside>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 GloryStarPack. All Rights Reserved. Member of the GloryStar Group.</p>
+        <div class="footer-social">
+            <a href="#">LinkedIn</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Behance</a>
+        </div>
+        <p class="copyright">&copy; 2026 GLORYSTARPACK. ALL RIGHTS RESERVED. MEMBER OF THE GLORYSTAR GROUP.</p>
     </footer>
 </body>
 </html>
